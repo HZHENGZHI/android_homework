@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".MainActivity">
+	<!--
+	底部导航栏
+-->
+	<com.google.android.material.bottomnavigation.BottomNavigationView
+			android:id="@+id/navigation"
+			android:layout_width="match_parent"
+			android:layout_height="42dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
+			android:background="@color/colorPrimary">
+		<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+			<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					app:srcCompat="@drawable/book"
+					android:id="@+id/bookview"
+					android:layout_weight="1"
+					android:adjustViewBounds="false"
+					android:cropToPadding="false"
+					android:clickable="true"
+					android:contentDescription="@string/app_name"
+			/>
+			<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					app:srcCompat="@drawable/my"
+					android:id="@+id/myview"
+					android:layout_weight="1"
+					android:clickable="true"
+					android:contentDescription="@string/app_name"/>
+		</LinearLayout>
+	</com.google.android.material.bottomnavigation.BottomNavigationView>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="411dp"
+			android:layout_height="57dp" tools:layout_editor_absoluteY="35dp" tools:layout_editor_absoluteX="0dp"
+			tools:ignore="MissingConstraints">
+		<SearchView
+				android:id="@+id/search_text"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:queryHint="请输入搜索内容"
+				android:background="@drawable/searchview_mode"
+				android:iconifiedByDefault="false"
+				android:queryBackground="@null"
+				android:submitBackground="@null"
+
+		/>
+	</LinearLayout>
+	<LinearLayout
+			android:id="@+id/linear"
+			android:orientation="horizontal"
+			android:layout_width="411dp"
+			android:layout_height="166dp" tools:layout_editor_absoluteY="92dp" tools:layout_editor_absoluteX="0dp"
+			tools:ignore="MissingConstraints">
+
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
