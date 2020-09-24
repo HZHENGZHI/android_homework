@@ -17,15 +17,12 @@
     String email=request.getParameter("email");
     if(email.equals(""))
     {
-%>
+%>    
 <jsp:forward page="result.jsp">
-    <jsp:param name="result" value="0"/>
+    <jsp:param name="result" value="0"/>        
 </jsp:forward>
 <%
-}else {%>
-<%--
-forward将请求转发到可以处理这个请求的文件上
---%>
+    }else {%>
 <jsp:forward page="result.jsp">
     <jsp:param name="result" value="1"/>
     <jsp:param name="email" value="<%=email%>"/>
