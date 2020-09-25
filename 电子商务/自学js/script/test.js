@@ -12,8 +12,18 @@ $("li").click(function (e) {
     $("#IMG").attr("src",img[i])
 });
 
-// $(".box").mouseenter(function () { 
-//     $(this).addClass("bg");
-// }).mouseleave(function () { 
-//     $(this).removeClass("bg");
-// });
+$(document).mousemove(function (e) { 
+    // values: e.clientX, e.clientY, e.pageX, e.pageY
+    console.log(e.pageX+"     "+e.pageY);
+    $("#IMG").css({ "width": "100px", "height": "100px","position": "absolute", "left": e.pageX, "top": e.pageY });
+});
+
+$.ajax({
+    type: "method",
+    url: "url",
+    data: "data",
+    dataType: "dataType",
+    success: function (response) {
+        
+    },
+});

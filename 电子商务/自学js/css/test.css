@@ -1,9 +1,16 @@
-.box{
-    width:100px;
-    height:100px;
-    background-color:red;
+*{
+    margin: 0px;
+    position: 0px;
 }
-.box:hover
+
+.center-block 
 {
-    background-color: green
+   text-align: center;
+
+}
+.input-group
+{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
 }
