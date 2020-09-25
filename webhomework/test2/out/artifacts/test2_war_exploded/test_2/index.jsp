@@ -9,15 +9,14 @@
          pageEncoding="utf-8" import="java.util.* , java.text.SimpleDateFormat"
 %>
 <%@ page import="javax.xml.crypto.Data" %>
-1111
-1111
+
 <html>
 <head>
   <title>$Title$</title>
 </head>
 <body>
 <form action="checkmail.jsp" method="post">
-  <input name="email" type="text" size="15" value="">
+  <input name="email" type="text" size="15">
   <input type="submit" value="提交">
 </form>
 </body>

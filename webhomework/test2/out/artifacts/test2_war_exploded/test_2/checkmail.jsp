@@ -18,12 +18,8 @@
     if(email.equals(""))
     {
 %>
-1111111
-1111
-
 <jsp:forward page="result.jsp">
     <jsp:param name="result" value="0"/>
-<%--    param用于传递参数 name为参数名称，value代表传递的参数值--%>
 </jsp:forward>
 <%
 }else {%>
