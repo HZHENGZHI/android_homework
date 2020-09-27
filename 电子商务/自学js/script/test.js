@@ -18,12 +18,6 @@ $(document).mousemove(function (e) {
     $("#IMG").css({ "width": "100px", "height": "100px","position": "absolute", "left": e.pageX, "top": e.pageY });
 });
 
-$.ajax({
-    type: "method",
-    url: "url",
-    data: "data",
-    dataType: "dataType",
-    success: function (response) {
-        
-    },
+$(":button").click(function (e) {
+    $(".form-item-4").remove();
 });
