@@ -4,22 +4,164 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>用户登录</title>
+  <title>数字校园 中山大学南方学院</title>
   <!-- Bootstrap 核心 CSS 文件 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/test.css">
   <script src="../script/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="../css/stu_check_grand.css">
 </head>
 
 <body>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">数字校园-学生平台</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">选课系统<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">课程退改补</a>
+        </li>
+
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            学籍信息
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">选择专业方向</a>
+            <a class="dropdown-item" href="#">选择专业</a>
+            <a class="dropdown-item" href="#">选择管理单位</a>
+            <a class="dropdown-item" href="#">更新联系方式</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">等待更新</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            学生申请
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">课室申请</a>
+            <a class="dropdown-item" href="#">加选课申请</a>
+            <a class="dropdown-item" href="#">学分会认申请</a>
+            <a class="dropdown-item" href="#">重修重考报名</a>
+            <a class="dropdown-item" href="#">转专业申请</a>
+            <a class="dropdown-item" href="#">加修学分申请</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">等待更新</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            成绩管理系统
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">成绩管理</a>
+            <a class="dropdown-item" href="#">学分互认成绩查询</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">成绩询疑</a>
+          </div>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">网上评教</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">宿舍与迎新系统</a>
+        </li>
+
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            个人工作台
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">代办</a>
+            <a class="dropdown-item" href="#">已办</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+    <div class="main_view">
+      <div class="top">
+        学分成绩查询
+      </div>
+      <div class="row" style="padding-left: 5px; padding-top: 10px;">
+        <div class="col">
+         <label for="">已选学分：</label> 
+          96
+        </div>
+        <div class="col">
+         <label for="">已获得学分：</label> 
+          96
+        </div>
+        <div class="col">
+         <label for="">历年平均成绩：</label> 
+          85.73
+        </div>
+        <div class="col">
+         <label for="">历年平均学分绩点：</label> 
+          3.57
+        </div>
+      </div>
+    </div>
+      <div class="main_view">
+        <div class="top">
+          成绩查询
+        </div>
+        <div class="row" style="padding-left: 5px; padding-top: 10px;">
+          <div class="col">
+            <label for="">开课学年：</label>
+            96
+          </div>
+          <div class="col">
+            <label for="">开课学期：</label>
+            96
+          </div>
+          <div class="col">
+            <label for="">课程名称：</label>
+            85.73
+          </div>
+          <div class="col">
+            <label for="">
+              
+              <button type="button" class="btn btn-success">筛选</button>
+              
+            </label>
+            3.57
+          </div>
+        </div>
+      </div>
+</div>
+
+
   <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 
 
   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <script src="../script/kkk.js"></script>
 </body>
 
 </html>
