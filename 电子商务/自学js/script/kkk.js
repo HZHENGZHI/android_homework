@@ -4,7 +4,7 @@ $("#lodin").click(function (e) {
     if(id == "123" && pw == "123")
     {
        
-        window.location.href="..//html/test.html"
+        window.location.href="..//html/home_page.html"
     }
     else
     {
