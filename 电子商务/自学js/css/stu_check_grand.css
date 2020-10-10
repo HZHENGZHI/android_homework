@@ -11,3 +11,10 @@
   border: 1px solid gray;
   margin-bottom: 10px;
 }
+
+.container-lg
+{
+  margin-top: 8px;
+  margin-left: 65px;
+  margin-right: 65px;
+}

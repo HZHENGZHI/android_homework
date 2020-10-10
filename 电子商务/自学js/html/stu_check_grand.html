@@ -73,7 +73,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">成绩管理</a>
-            <a class="dropdown-item" href="#">学分互认成绩查询</a>
+            
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">成绩询疑</a>
           </div>
@@ -102,27 +102,27 @@
     </div>
   </nav>
 
-<div class="container">
+<div class="container-lg">
     <div class="main_view">
       <div class="top">
         学分成绩查询
       </div>
       <div class="row" style="padding-left: 5px; padding-top: 10px;">
         <div class="col">
-         <label for="">已选学分：</label> 
-          96
+         <label for="" >已选学分：</label> 
+         <label for="" id="select_credit"></label>
         </div>
         <div class="col">
-         <label for="">已获得学分：</label> 
-          96
+         <label for="" >已获得学分：</label> 
+         <label for="" id="areadly_credit"></label>
         </div>
         <div class="col">
-         <label for="">历年平均成绩：</label> 
-          85.73
+         <label for="" >历年平均成绩：</label> 
+         <label for="" id="avg_grade"></label>
         </div>
         <div class="col">
-         <label for="">历年平均学分绩点：</label> 
-          3.57
+         <label for="" >历年平均学分绩点：</label> 
+         <label for="" id="avg_GAP"></label>
         </div>
       </div>
     </div>
@@ -133,25 +133,72 @@
         <div class="row" style="padding-left: 5px; padding-top: 10px;">
           <div class="col">
             <label for="">开课学年：</label>
-            96
+            
+            <label for="">
+              <select name="" class="form-control" id="start_class" style="width: 90px;">
+               
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                
+              </select>
+            </label>
+
           </div>
           <div class="col">
             <label for="">开课学期：</label>
-            96
+            <label for="">
+              <select name="" class="form-control" id="start_class" style="width: 90px;">
+               
+                  <option value="2020">1</option>
+                  <option value="2019">2</option>
+              </select>
+            </label>
+
           </div>
           <div class="col">
             <label for="">课程名称：</label>
-            85.73
+            <label for="">
+              
+              <input type="search" name="" id="input" class="form-control" style="width: 300px;">
+              
+            </label>
           </div>
           <div class="col">
             <label for="">
               
-              <button type="button" class="btn btn-success">筛选</button>
-              
+              <button type="button" class="btn btn-success" style="width: 80px;">刷新</button>
             </label>
-            3.57
+
           </div>
         </div>
+      </div>
+
+
+      <div>
+        <div style="text-align: center; background-color: #f5f5f5; font-size: 20px;">成绩列表</div>
+        <table class="table table-sm  table-bordered" style="table-layout: fixed;margin: auto;" >
+        <thead style="text-align: center;">
+          <tr>
+            <th>课程名称</th>
+            <th>课程性质</th>
+            <th>课程学分</th>
+            <th>平时成绩</th>
+            <th>期中成绩</th>
+            <th>期末成绩</th>
+            <th>总评成绩</th>
+            <th>重考成绩</th>
+            <th>辅修标记</th>
+            <th>绩点</th>
+          </tr>
+        </thead>
+        <tbody id="tbmain">
+         
+        </tbody>
+
+      </table>
       </div>
 </div>
 
@@ -162,6 +209,7 @@
   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="../script/stu_check_grand.js"></script>
 </body>
 
 </html>
