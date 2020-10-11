@@ -1,0 +1,29 @@
+.main_view
+{
+  white-space: nowrap;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+}
+.top
+{
+  border-radius: 5px ;
+  background-color: #f5f5f5;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  font-size: 25px;
+}
+.container-lg
+{
+  margin-top: 8px;
+  margin-left: 65px;
+  margin-right: 65px;
+  vertical-align: middle;
+}
+.test
+{
+      margin-top: 50px;
+}

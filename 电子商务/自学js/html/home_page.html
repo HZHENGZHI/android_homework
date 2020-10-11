@@ -15,26 +15,15 @@
 
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">数字校园-学生平台</a>
+        <a class="navbar-brand" href="../html/home_page.html">数字校园-学生平台</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            
-
-
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                学籍信息
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">选择专业方向</a>
-                <a class="dropdown-item" href="#">选择专业</a>
-                <a class="dropdown-item" href="#">选择管理单位</a>
-                <a class="dropdown-item" href="#">更新联系方式</a>
-              </div>
+            <li class="nav-item active">
+              <a class="nav-link" href="../html/select_course.html">选课系统<span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown active">
@@ -42,9 +31,8 @@
                 学生申请
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">课室申请</a>
-                <a class="dropdown-item" href="#">重修重考报名</a>
-                <a class="dropdown-item" href="#">转专业申请</a>
+                <a class="dropdown-item" href="">课室申请</a>
+                <a class="dropdown-item" href="../html/course_change.html">课程退改补</a>
               </div>
             </li>
             
@@ -55,30 +43,55 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="../html/stu_check_grand.html">成绩管理</a>
-              
-                <a class="dropdown-item" href="#">成绩询疑</a>
+                <a class="dropdown-item" href="../html/stu_question_grand.html">成绩询疑</a>
               </div>
             </li>
-
-            <li class="nav-item active">
-              <a class="nav-link" href="#">宿舍与迎新系统</a>
-            </li>
-
 
             <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                个人工作台
+               个人中心
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">代办</a>
-                <a class="dropdown-item" href="#">已办</a>
+                <a class="dropdown-item" href="../html/fix_password.html">修改密码</a>
+                <a class="dropdown-item" href="../html/confirm_stu_messge.html">学籍信息确认</a>
               </div>
-            </li> 
+            </li>
           </ul>
+
+          <div class="dropdown" style="margin-right: 30px;">
+            <button class="btn  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg class="bi bi-person-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">登出</a>
+            </div>
+          </div>
         </div>
       </nav>
 
+
+
+      
+
+
+
+
+
+
     <div class="container-lg">
+      <nav aria-label="breadcrumb" >
+        <ol class="breadcrumb" style="background-color:transparent; margin:0px; padding: 0px;">
+          当前路径：
+          <li class="breadcrumb-item active" aria-current="page">
+            数字校园学生平台
+          </li>
+         
+        </ol>
+      </nav>
           <table class="table table-sm  table-bordered" style="table-layout: fixed;margin: auto;" >
           <thead>
             <tr>

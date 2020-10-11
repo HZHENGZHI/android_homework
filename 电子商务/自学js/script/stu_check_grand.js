@@ -130,6 +130,8 @@ function getDatarow_not_null(h)
     var grade_point=document.createElement("td")
     grade_point.innerHTML=h.grade_point;
     row.appendChild(grade_point)
+
+
     }
     return row
 }
