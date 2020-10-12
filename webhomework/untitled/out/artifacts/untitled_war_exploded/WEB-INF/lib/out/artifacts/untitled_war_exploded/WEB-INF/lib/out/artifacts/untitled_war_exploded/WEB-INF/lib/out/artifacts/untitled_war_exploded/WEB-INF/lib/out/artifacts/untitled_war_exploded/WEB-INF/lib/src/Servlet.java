@@ -1,5 +1,6 @@
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+import model.user;
 import net.sf.json.JSONArray;
 import tool.database;
 
@@ -18,6 +19,8 @@ public class Servlet extends HttpServlet {
     database db=new database();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         System.out.println("开始交互");
@@ -29,8 +32,11 @@ public class Servlet extends HttpServlet {
             ResultSet re=db.select(sql);
             if(re.next())
             {
-                System.out.println("yes");
-                out.print("yes");
+                System.out.println("yes1");
+                user user=new user(name,pw,"1");
+                Gson gson=new Gson();
+                String userjson=gson.toJson(user);
+                out.print(userjson);
             }
         } catch (SQLException e) {
             e.printStackTrace();

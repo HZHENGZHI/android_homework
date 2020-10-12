@@ -1,5 +1,6 @@
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+import model.user;
 import net.sf.json.JSONArray;
 import tool.database;
 
@@ -23,16 +24,17 @@ public class Servlet extends HttpServlet {
         System.out.println("开始交互");
         String name=request.getParameter("name");//获取ajax传过来的值
         String pw=request.getParameter("pw");
-        String statu=request.getParameter("staut");
         PrintWriter out = response.getWriter();
         String sql= "select * from user where uid="+"'"+name+"'" +"and upw=" + "'"+pw+"'";
         try {
             ResultSet re=db.select(sql);
             if(re.next())
             {
-                System.out.println("yes");
-                statu="1";
-                out.print(statu);
+                System.out.println("yes1");
+                user user=new user(name,pw,"1");
+                Gson gson=new Gson();
+                String userjson=gson.toJson(user);
+                out.print(userjson);
             }
         } catch (SQLException e) {
             e.printStackTrace();
