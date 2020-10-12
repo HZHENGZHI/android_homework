@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<%
+    session.removeAttribute("userid");
+    session.removeAttribute("pw");
+    response.sendRedirect("test.jsp");
+%>
 </body>
 </html>

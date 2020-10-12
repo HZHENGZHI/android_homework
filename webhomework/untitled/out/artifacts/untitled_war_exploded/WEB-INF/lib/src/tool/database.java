@@ -12,7 +12,7 @@ public class database {
     public static void init() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver") ;
         String url="jdbc:mysql:"
-                + "//127.0.0.1:3306/12306?useSSL=false&serverTimezone=UTC";
+                + "//127.0.0.1:3306/stu_manger?useSSL=false&serverTimezone=UTC";
         String user="root";
         String password="123456";
         con = DriverManager.getConnection(url,user,password);
@@ -25,7 +25,6 @@ public class database {
     }
     public static ResultSet select(String sql) throws SQLException, ClassNotFoundException {
         ResultSet re = getStat().executeQuery(sql);
-        getStat().close();
         return re;
     }
     public static JSONArray formatRsToJsonArray(ResultSet rs) throws Exception {
