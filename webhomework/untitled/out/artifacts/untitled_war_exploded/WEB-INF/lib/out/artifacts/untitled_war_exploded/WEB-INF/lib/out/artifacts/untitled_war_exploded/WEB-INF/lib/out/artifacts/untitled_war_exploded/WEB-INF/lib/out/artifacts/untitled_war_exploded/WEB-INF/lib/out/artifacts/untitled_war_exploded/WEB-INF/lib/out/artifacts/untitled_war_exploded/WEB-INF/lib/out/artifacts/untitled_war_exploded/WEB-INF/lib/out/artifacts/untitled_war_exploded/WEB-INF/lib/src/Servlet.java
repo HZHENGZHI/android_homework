@@ -1,9 +1,11 @@
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+import model.user;
 import net.sf.json.JSONArray;
 import tool.database;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,13 +26,16 @@ public class Servlet extends HttpServlet {
         String name=request.getParameter("name");//获取ajax传过来的值
         String pw=request.getParameter("pw");
         PrintWriter out = response.getWriter();
-        String sql= "select * from user";
+        String sql= "select * from user where uid="+"'"+name+"'" +"and upw=" + "'"+pw+"'";
         try {
             ResultSet re=db.select(sql);
             if(re.next())
             {
-                System.out.println("yes");
-                out.print("yes");
+                System.out.println("yes1");
+                user user=new user(name,pw,"1");
+                Gson gson=new Gson();
+                String userjson=gson.toJson(user);
+                out.print(userjson);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,24 +48,20 @@ public class Servlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-//        res.setContentType("application/json;charset=UTF-8");
-//        req.setCharacterEncoding("utf-8");
-//        try {
-//            ResultSet set=db.select("select * from person_information");
-//            JSONArray array=db.formatRsToJsonArray(set);
-//            Gson gson=new Gson();
-//            String json=gson.toJson(array);
-//            PrintWriter out = res.getWriter();
-//            out.print(json);
-//            out.flush();
-//            out.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
+        creat("182017242","0221901X",req,res);
+        Cookie cookie1[]=req.getCookies();
+        for (Cookie cookie2:cookie1)
+        {
+            System.out.println(cookie2.getName()+":"+cookie2.getValue());
+        }
+    }
+    public void creat(String uid,String upw,HttpServletRequest request, HttpServletResponse response)
+    {
+        Cookie cookie_uid=new Cookie("uid",uid);
+        Cookie cookie_upw=new Cookie("upw",upw);
+        cookie_uid.setMaxAge(60*60);
+        cookie_upw.setMaxAge(60*60);
+        response.addCookie(cookie_uid);
+        response.addCookie(cookie_upw);
     }
 }

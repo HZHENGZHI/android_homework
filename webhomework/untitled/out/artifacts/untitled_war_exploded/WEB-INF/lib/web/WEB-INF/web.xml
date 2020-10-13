@@ -5,10 +5,21 @@
          version="4.0">
 	<servlet>
 		<servlet-name>Servlet</servlet-name>
-		<servlet-class>Servlet</servlet-class>
+		<servlet-class>server.Servlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Servlet</servlet-name>
 		<url-pattern>/demo</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>course_detial</servlet-name>
+		<servlet-class>server.Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>course_detial</servlet-name>
+		<url-pattern>/course_detial</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

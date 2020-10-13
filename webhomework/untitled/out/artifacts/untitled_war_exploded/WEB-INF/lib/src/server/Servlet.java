@@ -1,10 +1,14 @@
+package server;
+
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+
 import model.user;
 import net.sf.json.JSONArray;
 import tool.database;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,50 +25,53 @@ public class Servlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        System.out.println("开始交互");
         String name=request.getParameter("name");//获取ajax传过来的值
         String pw=request.getParameter("pw");
         PrintWriter out = response.getWriter();
         String sql= "select * from user where uid="+"'"+name+"'" +"and upw=" + "'"+pw+"'";
         try {
             ResultSet re=db.select(sql);
-            if(re.next())
+//            JSONArray jsonArray = db.formatRsToJsonArray(re);
+//            Gson gson=new Gson();
+//            String userjson=gson.toJson(jsonArray);
+//            System.out.println(userjson);
+//            out.print(userjson);
+//            用于返回多组json数据
+            if (re.next())
             {
-                System.out.println("yes1");
                 user user=new user(name,pw,"1");
+                Gson gson=new Gson();
+                String userjson=gson.toJson(user);
+                out.print(userjson);
+                Cookie cookie_name = new Cookie("username",name);
+                Cookie cookie_pw =new Cookie("pw",pw);
+                response.addCookie(cookie_name);
+                response.addCookie(cookie_pw);
+
+            }
+            else
+            {
+                user user=new user(name,pw,"0");
                 Gson gson=new Gson();
                 String userjson=gson.toJson(user);
                 out.print(userjson);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("数据库操作错误");
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         out.flush();
         out.close();
-        System.out.println("交互结束");
+        System.out.println();
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-//        res.setContentType("application/json;charset=UTF-8");
-//        req.setCharacterEncoding("utf-8");
-//        try {
-//            ResultSet set=db.select("select * from person_information");
-//            JSONArray array=db.formatRsToJsonArray(set);
-//            Gson gson=new Gson();
-//            String json=gson.toJson(array);
-//            PrintWriter out = res.getWriter();
-//            out.print(json);
-//            out.flush();
-//            out.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request,response);
+//        response.setHeader("Access-Control-Allow-Origin", "*");
+//        System.out.println("yes");
     }
 }

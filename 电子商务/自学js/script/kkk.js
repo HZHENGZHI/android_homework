@@ -1,3 +1,4 @@
+
 $("#lodin").click(function (e) { 
     $.ajax({
         type: "post",
@@ -9,9 +10,13 @@ $("#lodin").click(function (e) {
         dataType: "text",
         success: function (response) {
             var obj=JSON.parse(response)
-            if(obj.staut)
+            if(obj.staut==1)
             {
-               window.location.href="../html/home_page.html"
+                window.location.href="../html/home_page.html"
+               $.cookie('name',$("#id").val(),{expires:1});
+               $.cookie("pw",$("#pw").val(),{expires:1})
+               var k=$.cookie('name');
+               console.log(k);
             }
             else
             {
@@ -23,6 +28,7 @@ $("#lodin").click(function (e) {
             alert("服务器出错")
         }
     });
+    $
 
 });
 

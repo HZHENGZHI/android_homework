@@ -22,3 +22,7 @@ th
     margin-left: 65px;
     margin-right: 65px;
 }
+#calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }

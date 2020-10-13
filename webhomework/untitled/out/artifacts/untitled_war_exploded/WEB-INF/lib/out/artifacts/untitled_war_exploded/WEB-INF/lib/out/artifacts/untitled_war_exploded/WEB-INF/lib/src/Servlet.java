@@ -5,6 +5,7 @@ import net.sf.json.JSONArray;
 import tool.database;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,8 +20,6 @@ public class Servlet extends HttpServlet {
     database db=new database();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         System.out.println("开始交互");
@@ -36,6 +35,7 @@ public class Servlet extends HttpServlet {
                 user user=new user(name,pw,"1");
                 Gson gson=new Gson();
                 String userjson=gson.toJson(user);
+                System.out.println(userjson);
                 out.print(userjson);
             }
         } catch (SQLException e) {
@@ -48,25 +48,8 @@ public class Servlet extends HttpServlet {
         System.out.println("交互结束");
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-//        res.setContentType("application/json;charset=UTF-8");
-//        req.setCharacterEncoding("utf-8");
-//        try {
-//            ResultSet set=db.select("select * from person_information");
-//            JSONArray array=db.formatRsToJsonArray(set);
-//            Gson gson=new Gson();
-//            String json=gson.toJson(array);
-//            PrintWriter out = res.getWriter();
-//            out.print(json);
-//            out.flush();
-//            out.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        System.out.println("yes");
     }
 }

@@ -17,6 +17,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/web/lib/commons-collections-3.1.jar" />
           <element id="library" level="project" name="json-lib-2.4-jdk15" />
           <element id="library" level="project" name="gson-2.8.5" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/lib/gson-2.8.5.jar" />
         </element>
       </element>
     </root>
