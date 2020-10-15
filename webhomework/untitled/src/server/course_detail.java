@@ -30,7 +30,7 @@ public class course_detail extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String sql="select * from course_detail";
+        String sql="select * from course_detail ORDER BY days asc";
         try {
             ResultSet set=db.select(sql);
             JSONArray jsonArray=db.formatRsToJsonArray(set);
@@ -38,7 +38,7 @@ public class course_detail extends HttpServlet {
             String data=gson.toJson(jsonArray);
             PrintWriter out = response.getWriter();
             out.print(data);
-            System.out.println(data);
+//            System.out.println(data);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

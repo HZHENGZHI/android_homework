@@ -12,9 +12,9 @@ public class database {
     public static void init() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver") ;
         String url="jdbc:mysql:"
-                + "//127.0.0.1:3306/12306?useSSL=false&serverTimezone=UTC";
-        String user="root";
-        String password="123456";
+                + "//rm-bp140i440167f9e9rao.mysql.rds.aliyuncs.com:3306/stu_manger";
+        String user="hzz_user";
+        String password="DUIdui421";
         con = DriverManager.getConnection(url,user,password);
         System.out.println("CHENGG");
         stat = con.createStatement();
@@ -27,6 +27,12 @@ public class database {
         ResultSet re = getStat().executeQuery(sql);
         return re;
     }
+
+    public static ResultSet delete(String sql)
+    {
+        ResultSet resultSet =getStat()
+    }
+
     public static JSONArray formatRsToJsonArray(ResultSet rs) throws Exception {
         ResultSetMetaData md = rs.getMetaData();// 获取表结构
         int num = md.getColumnCount();// 得到行的总数
@@ -42,9 +48,12 @@ public class database {
         return array;
     }
 
-    public static void main(String[] args) throws Exception {
-        ResultSet set = select("select * from person_information");
-        JSONArray array=formatRsToJsonArray(set);
-        System.out.println(array);
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        String sql="select * from stu_score";
+        ResultSet set = select(sql);
+        while (set.next())
+        {
+            System.out.println(set.getString("teacher_name"));
+        }
     }
 }

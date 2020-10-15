@@ -47,7 +47,6 @@ public class Servlet extends HttpServlet {
                 Cookie cookie_pw =new Cookie("pw",pw);
                 response.addCookie(cookie_name);
                 response.addCookie(cookie_pw);
-
             }
             else
             {

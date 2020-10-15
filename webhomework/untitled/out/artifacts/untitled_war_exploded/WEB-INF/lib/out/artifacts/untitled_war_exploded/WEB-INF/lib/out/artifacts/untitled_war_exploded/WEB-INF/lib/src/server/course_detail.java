@@ -28,7 +28,9 @@ public class course_detail extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
-        String sql="select * from course_detail";
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        String sql="select * from course_detail ORDER BY days asc";
         try {
             ResultSet set=db.select(sql);
             JSONArray jsonArray=db.formatRsToJsonArray(set);

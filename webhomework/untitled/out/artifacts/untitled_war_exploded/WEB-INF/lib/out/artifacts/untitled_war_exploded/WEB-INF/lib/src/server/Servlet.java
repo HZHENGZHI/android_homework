@@ -2,6 +2,7 @@ package server;
 
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+
 import model.user;
 import net.sf.json.JSONArray;
 import tool.database;
@@ -42,6 +43,10 @@ public class Servlet extends HttpServlet {
                 Gson gson=new Gson();
                 String userjson=gson.toJson(user);
                 out.print(userjson);
+                Cookie cookie_name = new Cookie("username",name);
+                Cookie cookie_pw =new Cookie("pw",pw);
+                response.addCookie(cookie_name);
+                response.addCookie(cookie_pw);
             }
             else
             {

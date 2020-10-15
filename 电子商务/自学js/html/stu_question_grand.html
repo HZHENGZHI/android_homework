@@ -113,7 +113,7 @@
           </div>
           <div class="btn_group">
             <button type="button" class="btn btn-success refresh" >刷新</button>
-            <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModal">新增</button>
+            <button type="button" class="btn btn-info add_question"  data-toggle="modal" data-target="#myModal">新增</button>
         </div>
         <br>
         <br>
@@ -129,12 +129,13 @@
                 </div>
                 <div class="modal-body">
                     <label for="">课程名称</label>
-                    <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                    <input type="text" name="" id="input" class="form-control course_name" value="" required="required" pattern="" title="">
                     <label for="">申请原因</label>
-                    <textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
+                    <textarea name="" id="input" class="form-control apply_cause" rows="3" required="required"></textarea>
+                    <span class="notice" style="margin: 0px; padding: 0px; color: grey;">100字以内</span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary summit_apply">
                         提交申请
                     </button>
                 </div>
