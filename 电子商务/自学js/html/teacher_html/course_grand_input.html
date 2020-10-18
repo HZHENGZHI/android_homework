@@ -3,22 +3,21 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>数字校园--教师端</title>
+        <title>数字校园--教师版</title>
         <!-- Bootstrap 核心 CSS 文件 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
        
         <script src="/script/jquery-3.5.1.js"></script>
         <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <script src="/script/teacher/home_page.js"></script>
-        <script src="/script/Timetables.min.js"></script>
-        <link rel="stylesheet" href="/css/teacher/home_page.css">
+
+        <script src="/script/teacher/course_grand_input.js"></script>
 
     </head>
 
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="">数字校园-教师平台</a>
+            <a class="navbar-brand" href="home_page.html">数字校园-教师平台</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,13 +56,65 @@
               </div>
             </div>
           </nav>
-
-        <div class="container-lg" >
-          <div id="coursesTable"></div>
+        <div class="container-lg" style="margin-left: 50px; margin-right: 50px; margin-top: 10px;" >
+         
            
-
+           <table class="table table-hover table-bordered">
+             <thead>
+               <tr>
+                 <th>课程名称</th>
+                 <th>课程性质</th>
+                 <th>课程学分</th>
+                 <th>上课周数</th>
+                 <th>上课地点</th>
+                 <th>上课时间</th>
+                 <th>操作</th>
+               </tr>
+             </thead>
+             <tbody class="tbmain">
+               <tr>
+                 <td>KK</td>
+                 <td>KK</td>
+                 <td>KK</td>
+                 <td>KK</td>
+                 <td>KK</td>
+                 <td>KK</td>
+                 <td>
+                   
+                   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">button</button>
+                   
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+          </div>
+           <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">
+                          成绩录入
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                       
+                     
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary summit_apply" data-dismiss="modal">
+                            提交申请
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
         </div>
 
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+      </div>
+        
+    
 
 
         <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->

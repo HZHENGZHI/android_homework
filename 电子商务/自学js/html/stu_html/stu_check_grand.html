@@ -1,0 +1,196 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数字校园 中山大学南方学院</title>
+  <!-- Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="/script/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="/css/stu/stu_check_grand.css">
+</head>
+
+<body>
+
+
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="home_page.html">数字校园-学生平台</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="select_course.html">选课系统<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            学生申请
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="">课室申请</a>
+            <a class="dropdown-item" href="course_change.html">课程退改补</a>
+          </div>
+        </li>
+        
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            成绩管理系统
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="stu_check_grand.html">成绩管理</a>
+            <a class="dropdown-item" href="stu_question_grand.html">成绩询疑</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           个人中心
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="fix_password.html">修改密码</a>
+            <a class="dropdown-item" href="confirm_stu_messge.html">学籍信息确认</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="dropdown" style="margin-right: 30px;">
+        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <svg class="bi bi-box-arrow-right" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+            <path fill-rule="evenodd" d="M11.646 11.354a.5.5 0 0 1 0-.708L14.293 8l-2.647-2.646a.5.5 0 0 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+            <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+            <path fill-rule="evenodd" d="M2 13.5A1.5 1.5 0 0 1 .5 12V4A1.5 1.5 0 0 1 2 2.5h7A1.5 1.5 0 0 1 10.5 4v1.5a.5.5 0 0 1-1 0V4a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V12A1.5 1.5 0 0 1 9 13.5H2z"/>
+          </svg>
+        </button>
+    </div>
+  </nav>
+
+
+
+
+
+<div class="container-lg">
+  <nav aria-label="breadcrumb" >
+    <ol class="breadcrumb" style="background-color:transparent; margin:0px; padding: 0px;">
+      当前路径：
+      <li class="breadcrumb-item active" aria-current="page">
+        成绩管理系统
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">成绩管理</li>
+     
+    </ol>
+  </nav>
+    <div class="main_view">
+      <div class="top">
+        学分成绩查询
+      </div>
+      <div class="row" style="padding-left: 5px; padding-top: 10px;">
+        <div class="col">
+         <label for="" >已选学分：</label> 
+         <label for="" id="select_credit"></label>
+        </div>
+        <div class="col">
+         <label for="" >已获得学分：</label> 
+         <label for="" id="areadly_credit"></label>
+        </div>
+        <div class="col">
+         <label for="" >历年平均成绩：</label> 
+         <label for="" id="avg_grade"></label>
+        </div>
+        <div class="col">
+         <label for="" >历年平均学分绩点：</label> 
+         <label for="" id="avg_GAP"></label>
+        </div>
+      </div>
+    </div>
+      <div class="main_view">
+        <div class="top">
+          成绩查询
+        </div>
+        <div class="row" style="padding-left: 5px; padding-top: 10px;">
+          <div class="col">
+            <label for="">开课学年：</label>
+            
+            <label for="">
+              <select name="" class="form-control" id="start_class" style="width: 90px;">
+               
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                
+              </select>
+            </label>
+
+          </div>
+          <div class="col">
+            <label for="">开课学期：</label>
+            <label for="">
+              <select name="" class="form-control" id="teams" style="width: 90px;">
+               
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+              </select>
+            </label>
+
+          </div>
+          <div class="col">
+            <label for="">课程名称：</label>
+            <label for="">
+              
+              <input type="search" name="" id="input" class="form-control" style="width: 300px;">
+              
+            </label>
+          </div>
+          <div class="col">
+            <label for="">
+              
+              <button type="button" class="btn btn-success" style="width: 80px;">刷新</button>
+            </label>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <div style="text-align: center; background-color: #f5f5f5; font-size: 20px;">成绩列表</div>
+        <table class="table table-sm  table-bordered" style="table-layout: fixed;margin: auto;" >
+        <thead style="text-align: center;">
+          <tr>
+            <th>课程名称</th>
+            <th>课程性质</th>
+            <th>课程学分</th>
+            <th>平时成绩</th>
+            <th>期中成绩</th>
+            <th>期末成绩</th>
+            <th>总评成绩</th>
+            <th>绩点</th>
+          </tr>
+        </thead>
+        <tbody id="tbmain">
+         
+        </tbody>
+
+      </table>
+      </div>
+</div>
+
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/script/stu/stu_check_grand.js"></script>
+</body>
+
+</html>
