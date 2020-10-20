@@ -124,31 +124,31 @@ function getDatarow_not_null(h)
     // 创建行
     {
     var Course_name=document.createElement("td")
-    Course_name.innerHTML=h.course_name;
+    Course_name.innerHTML=h.coursename;
     row.appendChild(Course_name)
 
     var nature_course=document.createElement("td")
-    nature_course.innerHTML=h.course_nature;
+    nature_course.innerHTML=h.coursenature;
     row.appendChild(nature_course)
 
     var course_credits=document.createElement("td")
-    course_credits.innerHTML=h.credit;
+    course_credits.innerHTML=h.coursecredit;
     row.appendChild(course_credits)
 
     var normal_grades=document.createElement("td")
-    normal_grades.innerHTML=h.usual_performance;
+    normal_grades.innerHTML=h.usualgrand;
     row.appendChild(normal_grades)
 
     var mid_term_grades=document.createElement("td")
-    mid_term_grades.innerHTML=h.mid_performance;
+    mid_term_grades.innerHTML=h.midgrand;
     row.appendChild(mid_term_grades)
 
     var final_grades=document.createElement("td")
-    final_grades.innerHTML=h.final_performance;
+    final_grades.innerHTML=h.finalgrand;
     row.appendChild(final_grades)
 
     var overall_grands=document.createElement("td")
-    overall_grands.innerHTML=h.total_score;
+    overall_grands.innerHTML=h.totalgrand;
     row.appendChild(overall_grands)
 
     var grade_point=document.createElement("td")

@@ -1,11 +1,32 @@
 var obj="";
 var kkk;
+
+function WeeksBetw(date1, date2) {
+  //这里的date1,date2都是Date对象
+  var d1 = new Date(date1);
+  var d2 = new Date(date2);
+  var dt1 = d1.getTime();
+  var dt2 = d2.getTime();
+  return parseInt(Math.abs(dt2 - dt1) / 1000 / 60 / 60 / 24 / 7);
+  }
+
+
+
+
+
+
+
+
 window.onload=function()
 {
+
+  var week=WeeksBetw('2020-09-13',new Date())+1
     $.ajax({
         type: "get",
         url: "http://localhost:7070/untitled_war_exploded/couse_detail",
-        data: "",
+        data: {
+          countweek:week
+        },
         dataType: "text",
         success: function (kkk) {
             obj=JSON.parse(kkk)
@@ -24,15 +45,15 @@ window.onload=function()
             }
             for(var i=0;i<obj.length;i++)
             {
-              var due_time=obj[i].end-obj[i].start+1;
-              var week_Name=obj[i].days-1
+              var due_time=obj[i].endtime-obj[i].starttime+1;
+              var week_Name=obj[i].weeknum-1
               console.log("周:"+week_Name)
 
-              for(var j=obj[i].start-1;j<obj[i].end;j++)
+              for(var j=obj[i].starttime-1;j<obj[i].endtime;j++)
               {
-                courseList[week_Name][j]=""+obj[i].course_name+""
+                courseList[week_Name][j]=""+obj[i].coursename+"@"+obj[i].classroom
               }
-              console.log(obj[i].course_name+":"+due_time)
+              console.log(obj[i].coursename+":"+due_time)
             }
             var week = window.innerWidth > 360 ? ['周一', '周二', '周三', '周四', '周五','周六','周日'] : ['一', '二', '三', '四', '五','六','日'];
             var day = new Date().getDay();
