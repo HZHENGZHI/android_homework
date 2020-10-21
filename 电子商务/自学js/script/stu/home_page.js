@@ -23,7 +23,7 @@ window.onload=function()
   var week=WeeksBetw('2020-09-13',new Date())+1
     $.ajax({
         type: "get",
-        url: "http://localhost:7070/untitled_war_exploded/couse_detail",
+        url: "http://localhost:7070/untitled_war_exploded/course_detail",
         data: {
           countweek:week
         },
@@ -55,7 +55,7 @@ window.onload=function()
               }
               console.log(obj[i].coursename+":"+due_time)
             }
-            var week = window.innerWidth > 360 ? ['周一', '周二', '周三', '周四', '周五','周六','周日'] : ['一', '二', '三', '四', '五','六','日'];
+            var week = window.innerWidth > 360 ? ['周一', '周二', '周三', '周四', '周五'] : ['一', '二', '三', '四', '五'];
             var day = new Date().getDay();
             var courseType = [
               [{

@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
   </head>
   <body>
+    <div class="container">
     <table id="table" data-search="true"></table>
-
-    <button id="table1">123333</button>
+</div>
+  
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -24,11 +25,16 @@
                   </h4>
               </div>
               <div class="modal-body">
+                <div>
                   <label for="">课程名称</label>
                   <input type="text" name="" id="input" class="form-control course_name" value="" required="required" pattern="" title="">
+                  <label for="">课程名称</label>
+                </div>
+                <div>
                   <label for="">申请原因</label>
                   <textarea name="" id="input" class="form-control apply_cause" rows="3" required="required"></textarea>
                   <span class="notice" style="margin: 0px; padding: 0px; color: grey;">100字以内</span>
+                </div>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-primary summit_apply" data-dismiss="modal">

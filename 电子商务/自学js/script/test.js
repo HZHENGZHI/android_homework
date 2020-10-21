@@ -54,6 +54,9 @@ $('#table').bootstrapTable({
         })
 
 
+
+
+        
 $(".summit_apply").click(function (e) { 
     console.log(data)
     apply_cause=$(".apply_cause").val();

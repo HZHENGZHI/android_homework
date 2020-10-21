@@ -2,7 +2,7 @@
 $("#lodin").click(function (e) { 
     $.ajax({
         type: "post",
-        url: "http://localhost:7070/untitled_war_exploded/demo",
+        url: "http://localhost:7070/untitled_war_exploded/login",
         data: {
             name:$("#id").val(),
             pw:$("#pw").val()
@@ -12,7 +12,7 @@ $("#lodin").click(function (e) {
             var obj=JSON.parse(response)
             if(obj.staut==1)
             {
-                window.location.href="../html/home_page.html"
+                window.location.href="/html/stu_html/home_page.html"
                $.cookie('name',$("#id").val(),{expires:1});
                $.cookie("pw",$("#pw").val(),{expires:1})
                var k=$.cookie('name');
