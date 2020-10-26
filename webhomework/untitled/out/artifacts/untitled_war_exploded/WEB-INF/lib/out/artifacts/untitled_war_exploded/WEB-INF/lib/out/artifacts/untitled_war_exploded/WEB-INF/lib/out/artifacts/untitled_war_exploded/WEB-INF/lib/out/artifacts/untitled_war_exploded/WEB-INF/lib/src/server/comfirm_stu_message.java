@@ -23,17 +23,14 @@ public class comfirm_stu_message extends HttpServlet {
 
         PrintWriter out=response.getWriter();
         database db=new database();
-        String sql="select * FROM stu_message WHERE uid="+182017242;
+        String uid="182814471665";
+        String sql="select * FROM stu_message WHERE uid="+uid;
         try {
             ResultSet resultSet=db.select(sql);
-
-            {
-                Gson gson=new Gson();
-                JSONArray jsonArray = db.formatRsToJsonArray(resultSet);
-                String data=gson.toJson(jsonArray);
-                System.out.println(data);
-                out.print(data);
-            }
+            Gson gson=new Gson();
+            JSONArray jsonArray = db.formatRsToJsonArray(resultSet);
+            String data=gson.toJson(jsonArray);
+            out.print(data);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

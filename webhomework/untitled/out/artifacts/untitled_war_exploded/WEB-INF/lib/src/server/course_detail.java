@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet("/couse_detail")
+@WebServlet("/course_detail")
 public class course_detail extends HttpServlet {
     private static Statement stat;
     private static Connection con;
@@ -30,7 +30,9 @@ public class course_detail extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String sql="select * from course_detail ORDER BY days asc";
+        String week=request.getParameter("countweek");
+        String sql="SELECT * FROM `stu_course` where years=2020 and team=1 and startweek <="+week+" and endweek >="+week+" ORDER BY weeknum";
+
         try {
             ResultSet set=db.select(sql);
             JSONArray jsonArray=db.formatRsToJsonArray(set);
@@ -38,7 +40,6 @@ public class course_detail extends HttpServlet {
             String data=gson.toJson(jsonArray);
             PrintWriter out = response.getWriter();
             out.print(data);
-//            System.out.println(data);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

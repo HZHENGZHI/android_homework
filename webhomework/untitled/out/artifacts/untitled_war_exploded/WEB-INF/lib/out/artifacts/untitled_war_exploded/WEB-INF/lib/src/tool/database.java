@@ -1,10 +1,9 @@
 package tool;
 
-import java.sql.*;
-
-import com.mysql.cj.xdevapi.JsonArray;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import java.sql.*;
 
 public class database {
     private static Statement stat;
@@ -26,18 +25,18 @@ public class database {
     public static ResultSet select(String sql) throws SQLException, ClassNotFoundException {
         ResultSet re = getStat().executeQuery(sql);
         return re;
+
     }
 
     public static void  delete(String sql) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet =getStat().executeQuery(sql);
+       getStat().executeUpdate(sql);
     }
 
     public static void insert(String sql) throws SQLException, ClassNotFoundException {
-        getStat().execute
+        getStat().executeUpdate(sql);
     }
 
     public static void  update(String sql) throws SQLException, ClassNotFoundException {
-
         getStat().executeUpdate(sql);
     }
 
@@ -49,19 +48,26 @@ public class database {
         while (rs.next()) {// 如果结果集中有值
             JSONObject mapOfColValues = new JSONObject();// 创建json对象就是一个{name:wp}
             for (int i = 1; i <= num; i++) {
-                mapOfColValues.put(md.getColumnName(i), rs.getObject(i));// 添加键值对，比如说{name:Wp}通过name找到w
+                mapOfColValues.put(md.getColumnName(i), rs.getObject(i));// 添加键值对，比如说{name:Wp}通过name找到
             }
             array.add(mapOfColValues);
         }
         return array;
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        String sql="select * from stu_score";
-        ResultSet set = select(sql);
-        while (set.next())
-        {
-            System.out.println(set.getString("teacher_name"));
-        }
-    }
+//    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+//        String sql="select * from stu_score";
+//        ResultSet set = select(sql);
+//        while (set.next())
+//        {
+//            System.out.println(set.getString("teacher_name"));
+//        }
+//
+//        String sql_delete="DELETE FROM user where uid=123";
+//        delete(sql_delete);
+////        String sql_inser="insert into user (uid,upw) values(33333,44444)";
+////        insert(sql_inser);
+//        String sql_updata="update user set upw =123 where uid=33333";
+//        update(sql_updata);
+//    }
 }

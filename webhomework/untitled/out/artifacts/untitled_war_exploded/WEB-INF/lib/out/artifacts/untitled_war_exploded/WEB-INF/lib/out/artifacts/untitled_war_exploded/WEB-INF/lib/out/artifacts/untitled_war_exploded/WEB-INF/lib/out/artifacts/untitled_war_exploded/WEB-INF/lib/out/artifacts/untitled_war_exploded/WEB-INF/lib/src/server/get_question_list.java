@@ -32,7 +32,7 @@ public class get_question_list extends HttpServlet {
             Gson gson=new Gson();
             String data=gson.toJson(jsonArray);
             out.print(data);
-            System.out.println(data);
+//            System.out.println(data);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

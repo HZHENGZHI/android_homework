@@ -16,14 +16,13 @@ import java.sql.SQLException;
 
 @WebServlet("/get_question_list")
 public class get_question_list extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("Access-Control-Allow-Origin", "*");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-
         PrintWriter out=response.getWriter();
         database db=new database();
-
         String uid=request.getParameter("id");
         String sql="select * from stu_grand where stuid="+ uid;
         try {
@@ -32,7 +31,6 @@ public class get_question_list extends HttpServlet {
             Gson gson=new Gson();
             String data=gson.toJson(jsonArray);
             out.print(data);
-            System.out.println(data);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -40,7 +38,6 @@ public class get_question_list extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

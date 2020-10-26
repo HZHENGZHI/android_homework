@@ -5,10 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 @WebServlet("/upload")
 public class upload extends HttpServlet {
@@ -20,11 +17,18 @@ public class upload extends HttpServlet {
         byte[] bys=new byte[1000];
         int len=inputStream.read(bys);
         String path=request.getRealPath("/upload");
-        File file=new File(path,"")
-        BufferedOutputStream bufferedOutputStream=new BufferedOutputStream()
+        File file=new File(path,"a.js");
+        OutputStream outputStream = new FileOutputStream(file);
+        BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(outputStream);
+        bufferedOutputStream.write(bys,0,len);
+        inputStream.close();
+        bufferedOutputStream.close();
+        outputStream.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//        doPost(request,response);
+        PrintWriter out=response.getWriter();
+        out.print("123");
     }
 }

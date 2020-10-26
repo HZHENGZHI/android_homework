@@ -24,15 +24,8 @@ public class database {
     }
     public static ResultSet select(String sql) throws SQLException, ClassNotFoundException {
         ResultSet re = getStat().executeQuery(sql);
-        if(re!=null)
-        {
-            System.out.println("no");
-            return re;
-        }
-        else
-        {
-            return null;
-        }
+        return re;
+
     }
 
     public static void  delete(String sql) throws SQLException, ClassNotFoundException {

@@ -5,6 +5,7 @@ import model.user;
 import tool.database;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+@WebServlet("/login")
 public class login extends HttpServlet {
     private static Statement stat;
     public static Connection con;

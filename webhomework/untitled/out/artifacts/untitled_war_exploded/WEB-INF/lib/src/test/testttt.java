@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("test/testttt")
+@WebServlet("/testttt")
 public class testttt extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         PrintWriter out=response.getWriter();
         out.print("1231313");
+        String data=request.getParameter("data");
+        System.out.println(data);
 
     }
 

@@ -14,6 +14,8 @@ public class testttt extends HttpServlet {
 
         PrintWriter out=response.getWriter();
         out.print("1231313");
+        String data=request.getParameter("data");
+        System.out.println(data);
 
     }
 
