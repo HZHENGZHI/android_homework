@@ -7,4 +7,6 @@ $(".login").click(function (e) {
 
     console.log($.cookie("id"))
     console.log($.cookie('pw'))
+
+    window.location.href="test.html"
 });
