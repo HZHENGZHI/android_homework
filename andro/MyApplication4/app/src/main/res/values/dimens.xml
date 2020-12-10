@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="top">25dp</dimen>
+	<dimen name="right">10dp</dimen>
+	<dimen name="hight">44dp</dimen>
 </resources>
