@@ -2,19 +2,27 @@ $('#table').bootstrapTable({
     search:true,
     pagination:true,
     paginationLoop:true,
+    toolbar:'toolbar',
+    local:'zh-CN',
+    url:"",
+    method:"GET",
+    
    
 columns: [{
     field: 'id',
     title: '序号',
-    sortable:true,
+    checkbox:true,
+
 }, {
     field: 'book_name',
     title: '书名',
-    width:300
+    width:300,
+    clickToSelect:true,
 }, 
 {
-    fielid:"category",
-    title:"类别"
+    field:'category',
+    title:"类别",
+    sortable:true,
 },
 {
     field: 'book_price',
@@ -23,63 +31,131 @@ columns: [{
 },
 {
     field:'opertion',
-    title:'操作'
+    title:'操作',
+    events:
+    {
+       'click .back':function(e,value,row,index)
+       {
+        //    console.log(row);
+       }
+    },
+    formatter:function(value,item,index)
+        {
+            item.id=false;
+            var btnfix=" <button type='button' class='btn btn-primary back' style='margin-right: 15px;'>加入购物车</button>"
+            return btnfix
+        },
 }
 ],
-data: [{
-    id: 1,
-    book_name: '<img src="https://img2.doubanio.com/view/ark_article_cover/retina/public/24283113.jpg?v=0" class="img-fluid" alt="Responsive image" style="height: 60px; width: 50px;"> 哈姆雷特',
-    book_price: 'java'
-}, {
-    id: 2,
+data: [
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
+{
+    id: '',
     book_name: 'Item 2',
+    category:"计算机",
     book_price: '$2'
 },
 {
-    id: 3,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
 {
-    id: 4,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
 {
-    id: 5,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-{
-    id: 6,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-{
-    id: 7,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-{
-    id: 8,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-
-{
-    id: 9,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-{
-    id: 10,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
-{
-    id: 11,
-    book_name: 'Item 2',
-    book_price: '$2'
-},
+    id: '',
+    book_name: 'kk',
+    category:"计算机",
+    book_price: 'java',
+}, 
 ]
 })
+$(".back").click(function (e) { 
+    var data=$("#table").bootstrapTable('getSelections')
+    var k=JSON.stringify(data)
+    if(data==null)
+    {
+        console.log("null");
+    }
+    for(i=0;i<data.length;i++)
+    {
+        console.log(data[i]);
+    }
+    
+});
