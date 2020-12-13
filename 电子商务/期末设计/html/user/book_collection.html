@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>图书收藏</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/css/public/toast.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+    <script src="/js/public/toast.js"></script>
+</head>
+  <body>
+
+    <div class="navhear"></div>
+    <script>
+        $('.navhear').load('/html/public/nav_head.html');
+    </script>
+    <table id="table"></table>
+    <!-- <script>
+       const TYPES = ['info', 'warning', 'success', 'error'],
+        TITLES = {
+            'info': 'Notice!',
+            'success': 'Awesome!',
+            'warning': 'Watch Out!',
+            'error': 'Doh!'
+        },
+        CONTENT = {
+            'info': 'Hello, world! This is a toast message.',
+            'success': 'The action has been completed.',
+            'warning': 'It\'s all about to go wrong',
+            'error': 'It all went wrong.'
+        },
+        POSITION = ['top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left', 'bottom-center'];
+
+    $.toastDefaults.position = 'bottom-right';
+    $.toastDefaults.dismissible = true;
+    $.toastDefaults.stackable = true;
+    $.toastDefaults.pauseDelayOnHover = true;
+    $('.bttn').click(function () {
+        var rng = Math.floor(Math.random() * 2) + 1,
+            type = TYPES[2],
+            title = TITLES[type],
+            content = CONTENT[type];
+
+        if (rng === 1) {
+            $.toast({
+                type: type,
+                title: title,
+                subtitle: '11 mins ago',
+                content: content,
+                delay: 5000
+            });
+        } else {
+            $.toast({
+                type: type,
+                title: title,
+                subtitle: '11 mins ago',
+                content: content,
+                delay: 5000,
+                img: {
+                    src: 'https://via.placeholder.com/20',
+                    alt: 'Image'
+                }
+            });
+        }
+    });
+        </script> -->
+    <script src="/js/user/book_collection.js"></script>
+  </body>
+</html>
