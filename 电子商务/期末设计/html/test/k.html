@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function detail_k(name,nums)
+        {
+            var temp=new Object();
+            temp.name=name;
+            temp.nums=nums;
+            return temp;
+        }
+
+
+        var kk=[]
+        kk[0]=detail_k("21","231");
+        kk[1]=detail_k("2122","dadsada");
+        kk[2]=detail_k("2122","dadsada");
+        kk[3]=detail_k("2122","dadsada");
+        kk[4]=detail_k("2122","dadsada");
+        kk[5]=detail_k("2122","dadsada");
+        console.log(kk);
+        localStorage.setItem("dsa",JSON.stringify(kk))
+        var kkdata=localStorage.getItem("dsa");
+
+        console.log(JSON.parse(kkdata).length);
+
+    </script>
+</body>
+</html>
