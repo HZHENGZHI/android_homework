@@ -6,7 +6,7 @@ $('#table').bootstrapTable({
     local:'zh-CN',
     url:"",
     method:"GET",
-    
+    toolbar:'#toolbar',//工具栏
    
 columns: [{
     field: 'id',
@@ -43,8 +43,10 @@ columns: [{
         {
             item.id=false;
             var btnfix=" <button type='button' class='btn btn-primary back' style='margin-right: 15px;'>加入购物车</button>"
+            +"<button type='button' class='btn btn-primary back' style='margin-right: 15px;'>加入收藏</button>"
             return btnfix
         },
+        width:500,
 }
 ],
 data: [
@@ -158,4 +160,9 @@ $(".back").click(function (e) {
         console.log(data[i]);
     }
     
+});
+$(".total-car").click(function (e) { 
+    e.preventDefault();
+    var data=$("#table").bootstrapTable('getSelections')
+    console.log(data);
 });
