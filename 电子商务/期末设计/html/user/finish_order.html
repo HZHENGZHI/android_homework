@@ -19,12 +19,22 @@
 </head>
   <body>
 
-    <div class="navhear"></div>
+    <div class="navhear container"></div>
     <script>
         $('.navhear').load('/html/public/nav_head.html');
     </script>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">首页</a>
+            </li>
+             <li class="breadcrumb-item active" aria-current="page">订单中心</li>
+            <li class="breadcrumb-item active" aria-current="page">已完成订单</li>
+          </ol>
+        </nav>
     <table id="table"></table>
-
+</div>
       <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">

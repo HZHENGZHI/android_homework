@@ -18,11 +18,24 @@
 </head>
   <body>
 
-    <div class="navhear"></div>
+    <div class="navhear container"></div>
     <script>
         $('.navhear').load('/html/public/nav_head.html');
     </script>
+<div class="container">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+              <a href="#">首页</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">图书收藏</li>
+      </ol>
+  </nav>
+
     <table id="table"></table>
+</div>
+  
     <!-- <script>
        const TYPES = ['info', 'warning', 'success', 'error'],
         TITLES = {
