@@ -20,9 +20,31 @@
     <script>
         $('.navhear').load('/html/public/nav_head.html');
     </script>
-<div class="container">
-    <table id="table"></table>
+    <div class="container" style="padding:10px">
+    <table id="table" ></table>
+
+    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups" style="padding-top: 10px;">
+    <div class="btn-group" role="group" aria-label="First group">
+    </div>
+    <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon2">¥</div>
+            </div>
+            <div class="input-group-prepend" style="padding-right:10px">
+                <div class="input-group-text total_num" id="btnGroupAddon2" >0</div>
+            </div>  
+            <button type="button" class="btn btn-success total" style="float:right">结算</button>
+    </div>
 </div>
+</div>
+
+
+<button type="button" class="btn btn-default">
+    <img src="/img/bootstrap-icons-1.2.1/trash.svg " class="text-success" alt="" width="28" height="28">
+</button>
+
+
+
     <script src="/js/user/book_shpping_car.js"></script>
   </body>
 </html>
