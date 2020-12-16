@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
+        <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+  <title>首页</title>
+</head>
+
+<body>
+    <div class="navhear container"></div>
+    <script>
+      $('.navhear').load('/html/public/nav_head.html');
+    </script>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">首页</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">个人中心</li>
+      <li class="breadcrumb-item active" aria-current="page">地址管理</li>
+    </ol>
+  </nav>
+
+
+
+  <div class="container row">
+    <div class="btn-group-vertical">
+
+      <div class="btn-group" role="group">
+        <button id="order_center" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          订单中心
+        </button>
+        <div class="dropdown-menu" aria-labelledby="order_center">
+          <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
+          <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
+        </div>
+      </div>
+      <button id="shopping_car" type="button" class="btn btn-primary" style="height:30px">
+        地址管理
+      </button>
+      <button id="person_center" type="button" class="btn btn-light">
+        个人中心
+      </button>
+    </div>
+      <div class="col">
+         <table id="table"></table>
+      </div>
+      <script>
+        $("#shopping_car").click(function (e) {
+          e.preventDefault();
+          window.location.href = "/html/user/address_manger.html"
+        });
+        $("#person_center").click(function (e) {
+          e.preventDefault();
+          window.location.href = "/html/user/preson_center.html"
+        });
+      </script>
+      
+<script src="/js/user/address_manger.js"></script>
+</body>
+
+</html>
