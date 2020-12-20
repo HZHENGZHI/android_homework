@@ -100,8 +100,8 @@ $('#table').bootstrapTable({
         formatter:function(value,item,index)
         {
             item.id=false;
-            var btnfix=" <button type='button' class='btn btn-primary back' style='margin-right: 15px;' data-toggle='modal' data-target='#exampleModal'>查看购买详细</button>"
-            +"<button type='button' class='btn btn-primary' style='margin-right: 15px;'data-toggle='modal' data-target='#mark_evaluation'>对商家进行评价</button>"
+            var btnfix = "<div class='row'><button type='button' class='btn back shadow-none' data-toggle='modal' data-target='#exampleModal'><img src='/img/bootstrap-icons-1.2.1/Cart4.svg' class='text-success' alt='' width='22' height='22'></button>"
+            +"<button type='button' class='btn shadow-none' data-toggle='modal' data-target='#mark_evaluation'><img src='/img/bootstrap-icons-1.2.1/Chat-dots.svg' class='text-success' alt='' width='22' height='22'></button></div>"
             return btnfix
         },
     }

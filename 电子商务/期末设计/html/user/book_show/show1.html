@@ -44,12 +44,14 @@
             异步I/O 实现原理的展现、异步编程的探讨、内存控制的介绍、二进制数据Buffer 的细节、Node 中的网络编程基础、Node 中的Web 开发、
             进程间的消息传递、Node 测试以及通过Node 构建产品需要的注意事项。最后的附录介绍了Node 的安装、调试、编码规范和NPM 仓库等事宜。本书适合想深入了解 Node 的人员阅读。
         </p>
-        <a href="#" class="btn btn-primary">
-            立即购买
-        </a>
-        <a href="#" class="btn btn-primary" style="margin-left: 90px;">加入购物车</a>
+        <a href="#" class="btn btn-primary add" style="margin-left: 90px;">加入购物车</a>
         </div>
     </div>
-
+    <script>
+        $(".add").click(function (e) { 
+            e.preventDefault();
+            alert("已加入购物车")
+        });
+    </script>
 </body>
 </html>

@@ -99,7 +99,7 @@ $('#table').bootstrapTable({
         formatter:function(value,item,index)
         {
             item.id=false;
-            var btnfix=" <button type='button' class='btn btn-primary back' style='margin-right: 15px;' data-toggle='modal' data-target='#exampleModal'>查看购买详细</button>"
+            var btnfix = " <button type='button' class='btn back' style='margin-right: 15px;' data-toggle='modal' data-target='#exampleModal'><img src='/img/bootstrap-icons-1.2.1/Cart4.svg' class='text-success' alt='' width='22' height='22'></button>"
             return btnfix
         },
     }
@@ -162,22 +162,22 @@ $('#table').on('dbl-click-row.bs.table', function (field, value, row, $element) 
         //     };
         //     }
     },
-    {
-        field:'operation',
-        title:'操作',
-        events:
-        {
-           'click .del':function(e,value,row,index)
-        {
-            $('#detail_table').bootstrapTable('remove',{field:'name',values:row.name}); 
-        }
-        },
-        formatter:function(value,item,index)
-        {
-            item.id=false;
-            var btnfix=" <button type='button' class='btn btn-primary del' style='margin-right: 15px;'>退货</button>"
-            return btnfix
-        },
-    }
+    // {
+    //     field:'operation',
+    //     title:'操作',
+    //     events:
+    //     {
+    //        'click .del':function(e,value,row,index)
+    //     {
+    //         $('#detail_table').bootstrapTable('remove',{field:'name',values:row.name}); 
+    //     }
+    //     },
+    //     formatter:function(value,item,index)
+    //     {
+    //         item.id=false;
+    //         var btnfix=" <button type='button' class='btn btn-primary del' style='margin-right: 15px;'>退货</button>"
+    //         return btnfix
+    //     },
+    // }
 ],
 })

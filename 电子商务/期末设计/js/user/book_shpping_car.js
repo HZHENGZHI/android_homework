@@ -1,26 +1,21 @@
 function object_data(name,nums,price)
 {
-   
     this.name = name;
     this.nums=nums;
     this.price=price;
+    this.setState=function(nums){
+        this.nums=nums;
+    }
 }
+
 var data=[]
 data[0]=new object_data("1231","123","123");
 data[1] = new object_data("1232", "123", "123");
 data[2] = new object_data("1233", "123", "123")
-
+var index1=0;
 
 $('#table').bootstrapTable({
-    // search:true,
-    // pagination:true,
-    // paginationLoop:true,
-    // toolbar:'toolbar',
-    local:'zh-CN',
-    // url:"",
-    // method:"GET",
-    // toolbar:'#toolbar',//工具栏
-   
+local:'zh-CN',
 columns: [
     {
     field: 'id',
@@ -73,6 +68,8 @@ columns: [
             },
             'click .check_detail':function(e,value,row,index)
             {
+                index1=index;
+               console.log(index)
                var origin = row.nums;
                 $(".count_num").html(origin);
                 $(".objectname").html(row.name);
@@ -89,6 +86,9 @@ columns: [
 ],
     data:data
 })
+
+
+
 $(".total").click(function (e) { 
     var getcol_data=$("#table").bootstrapTable('getSelections')
     var total_nums=0
@@ -150,6 +150,10 @@ $('#table').on('check-all.bs.table', function (rowsAfter, rowsBefore) {
 $('#table').on('uncheck-all.bs.table', function (rowsAfter, rowsBefore) {
     amoutn = 0;
     $(".total_num").html(amoutn);
-    // ...
 })
 // onUncheckSome
+$(".close_btn").click(function (e) { 
+    var count = parseInt($(".count_num").html());
+    data[index1].setState(count);
+    $("#table").bootstrapTable('load', data)
+});

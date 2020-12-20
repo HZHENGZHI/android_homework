@@ -1,5 +1,6 @@
 $('#table').bootstrapTable({
   toolbar: 'toolbar',
+  cardView:true,
   columns: [
 
     {
@@ -10,23 +11,12 @@ $('#table').bootstrapTable({
     {
       field:'address',
       title:'地址',
-      width:100
     },
     {
       field:'phone',
       title:'手机号',
       width:100
     },
-    {
-      field:'operation',
-      title:'操作',
-      formatter: function (value, item, index) {
-        item.id = false;
-        var btnfix = " <button type='button' class='btn btn-primary bttn' style='margin-right: 15px;'>编辑</button>" 
-        return btnfix
-      },
-      width:100
-    }
   ],
   data: [
     {

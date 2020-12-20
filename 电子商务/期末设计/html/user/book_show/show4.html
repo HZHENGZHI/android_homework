@@ -45,12 +45,15 @@
 德国少年维尔纳从小失去双亲，与妹妹在矿区孤儿院相依为命。一心想摆脱底层命运的他，凭借无线电天赋跻身纳粹精英学校，本以为是命运的转折，不料却跌入另一个地狱。
 
 战争碾碎了他们的希望，两个陌生人的生命轨迹也意外交汇。当平静的生活成为不可企及的黑暗之光，他们是否有勇气，在死之前，活出生机？     </p>
-        <a href="#" class="btn btn-primary">
-            立即购买
-        </a>
-        <a href="#" class="btn btn-primary">加入购物车</a>
+
+        <a href="#" class="btn btn-primary add">加入购物车</a>
         </div>
     </div>
-
+  <script>
+      $(".add").click(function (e) {
+          e.preventDefault();
+          alert("已加入购物车")
+      });
+  </script>
 </body>
 </html>

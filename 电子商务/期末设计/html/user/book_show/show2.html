@@ -45,12 +45,15 @@
             最后，揭示了HTTP 协议的底层细节，
             同时详细介绍了HTTP 2.0、 XHR、SSE、WebSocket、WebRTC 和DataChannel 等现代浏览器新增的具有革命性的新能力。
         </p>
-        <a href="#" class="btn btn-primary">
-            立即购买
-        </a>
-        <a href="#" class="btn btn-primary" style="margin-left: 90px;">加入购物车</a>
+        
+        <a href="#" class="btn btn-primary add" style="margin-left: 90px;">加入购物车</a>
         </div>
     </div>
-
+  <script>
+      $(".add").click(function (e) {
+          e.preventDefault();
+          alert("已加入购物车")
+      });
+  </script>
 </body>
 </html>
