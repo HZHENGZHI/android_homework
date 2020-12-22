@@ -8,8 +8,7 @@ function book(picture, name, IBSN, price)
 
 
 var data=[];
-data[0] = new book("https://img2.doubanio.com/view/ark_article_cover/retina/public/24283113.jpg?v=0","哈姆雷特1", "9787552701074", "123")
-data[1] = new book("https://img2.doubanio.com/view/ark_article_cover/retina/public/24283113.jpg?v=0", "哈姆雷特2", "9787552701074", "123")
+data[0] = new book("https://source.acexy.cn/view/XaFp5ry","哈姆雷特", "9787552701074", "65")
 var temp=0
 
 

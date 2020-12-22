@@ -21,10 +21,6 @@ $('#table').bootstrapTable({
             checkbox:true
         },
     {
-        field: 'uuid',
-        title: '序号',
-    },
-    {
         field:'order_time',
         title: '下单时间',
     },
@@ -60,22 +56,11 @@ $('#table').bootstrapTable({
     {
         field:'total_price',
         title: '商品总价',
-        // 可以用在购物车中
-        // footerFormatter:function(value)
-        // {
-        //     var count=0;
-        //     for( var i in value)
-        //     {
-        //         count+=parseInt(value[i].total_price)
-        //     }
-        //     return count;
-        // }
         
     },
     {
         field:'operation',
         title:'操作',
-        width:400,
         events:
         {
            'click .back':function(e,value,row,index)
@@ -108,21 +93,19 @@ $('#table').bootstrapTable({
 ],
     data:[
         {
-            uuid: '1',
             order_time:'2020-1-1',
             object_detail:'哈姆雷特-1件'+'-'+"java-1件"+"-"+"javac-1件",
-            Merchant:'123',
-            Shipping_address:'123',
-            Shippinger:'123',
+            Merchant:'悦通旗舰店',
+            Shipping_address:'广东省广州市从化区中大南方',
+            Shippinger:'黄泽树',
             total_price:'123',
         },
         {
-            uuid: '1',
             order_time:'2020-1-1',
             object_detail:'哈姆雷特-1件',
-            Merchant:'123',
-            Shipping_address:'123',
-            Shippinger:'123',
+            Merchant:'悦通旗舰店',
+            Shipping_address:'广东省广州市从化区中大南方',
+            Shippinger:'黄泽树',
             total_price:'123',
         }
     ]

@@ -84,99 +84,21 @@ columns: [{
 data: [
 {
     id: '',
-    book_name: 'kk',
+    book_name: 'java的编程思想',
     category:"计算机",
-    book_price: 'java',
+    book_price: '100',
 }, 
 {
     id: '',
-    book_name: 'kk',
+    book_name: '移动web开发从--从入门到精通',
     category:"计算机",
-    book_price: 'java',
+    book_price: '49',
 }, 
 {
     id: '',
-    book_name: 'kk',
+    book_name: '安卓开发入门',
     category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'Item 2',
-    category:"计算机",
-    book_price: '$2'
-},
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
-}, 
-{
-    id: '',
-    book_name: 'kk',
-    category:"计算机",
-    book_price: 'java',
+    book_price: '69',
 }, 
 ]
 })
