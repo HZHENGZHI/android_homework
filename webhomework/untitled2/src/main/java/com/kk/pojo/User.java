@@ -1,13 +1,13 @@
-package com.pojo;
+package com.kk.pojo;
 
-public class user {
+public class User {
     private String userid;
     private String userpw;
 
-    public user() {
+    public User() {
     }
 
-    public user(String userid, String userpw) {
+    public User(String userid, String userpw) {
         this.userid = userid;
         this.userpw = userpw;
     }

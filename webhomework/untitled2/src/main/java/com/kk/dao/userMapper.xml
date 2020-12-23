@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.user_interface">
-    <select id="checkuser" resultType="com.pojo.user">
-         select * from test_mybaist.user
+<mapper namespace="com.kk.dao.user_interface">
+    <select id="checkuser" parameterType="User" resultType="User">
+         select * from user where userid=#{userid} and userpw=#{userpw}
     </select>
 </mapper>
