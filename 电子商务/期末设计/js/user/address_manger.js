@@ -1,15 +1,34 @@
 $('#table').bootstrapTable({
   toolbar: 'toolbar',
   cardView:true,
+  ajax: function (request) {
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:7070/untitled2_war/user_msg",
+      data: {
+        token: $.cookie('name'),
+        method: "getaddressmsg"
+      },
+      jsonp: 'callback',
+      success: function (msg) {
+        request.success({
+          row: JSON.parse(msg)
+        });
+        $('#table').bootstrapTable('load', JSON.parse(msg));
+        data = JSON.parse(msg)
+        console.log(data)
+      },
+    });
+  },
   columns: [
 
     {
-      field: 'getobjectman',
+      field: 'shoppinger',
       title: '收货人',
       width: 80
     },
     {
-      field:'address',
+      field: 'shopping_address',
       title:'地址',
     },
     {
@@ -18,23 +37,4 @@ $('#table').bootstrapTable({
       width:100
     },
   ],
-  data: [
-    {
-      getobjectman:'黄政治',
-      address:'广东省深圳市南山区华晖云门1栋20f',
-      phone:'13049424341'
-    },
-    {
-      getobjectman: '黄政治',
-      address: '广东省深圳市南山区华晖云门1栋20f',
-      phone: '13049424341'
-    },
-    {
-      getobjectman: '黄政治',
-      address: '广东省深圳市南山区华晖云门1栋20f',
-      phone: '13049424341'
-    }
-
-  ]
-
 })

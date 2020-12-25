@@ -3,15 +3,35 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <typeAlias type="com.kk.pojo.User" alias="User"/>
+        <typeAlias type="com.kk.pojo.book" alias="book"/>
+        <typeAlias type="com.kk.pojo.shopping_car" alias="car"/>
+        <typeAlias type="com.kk.pojo.shopping_address" alias="shopping_address"/>
+        <typeAlias type="com.kk.pojo.book_collection" alias="book_collection"/>
+        <typeAlias type="com.kk.pojo.order_list" alias="order_list"/>
+        <typeAlias type="com.kk.pojo.buy_book_time" alias="buy_book_time"/>
+        <typeAlias type="com.kk.pojo.admin_user" alias="admin"/>
+    </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="$rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com:3306/java_web?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
                 <property name="username" value="hzz_user"/>
                 <property name="password" value="DUIdui421"/>
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="com/kk/dao/userMapper.xml"/>
+        <mapper resource="com/kk/dao/book_searchMapper.xml"/>
+        <mapper resource="com/kk/dao/shopping_carMapper.xml"/>
+        <mapper resource="com/kk/dao/shopping_addressMapper.xml"/>
+        <mapper resource="com/kk/dao/book_collectionMapper.xml"/>
+        <mapper resource="com/kk/dao/buy_book_timeMapper.xml"/>
+        <mapper resource="com/kk/dao/order_listMapper.xml"/>
+        <mapper resource="com/kk/dao/adminMapper.xml"/>
+    </mappers>
 </configuration>

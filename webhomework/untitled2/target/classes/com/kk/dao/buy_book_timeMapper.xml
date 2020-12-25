@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.dao.buy_book_timeMapper">
+    <insert id="insertdata" parameterType="buy_book_time">
+        insert into buy_book_time(userid,timeMils,book_name,book_nums,book_price) values(#{userid},#{timeMils},#{book_name},#{book_nums},#{book_price})
+    </insert>
+</mapper>

@@ -19,7 +19,7 @@ window.onload = function ()
 {
     $.ajax({
         type: "get",
-        url: "http://localhost:7070/untitled2_war//shopping_address",
+        url: "http://localhost:7070/untitled2_war/shopping_address",
         data: 
         {
             token:this.$.cookie('name')
@@ -99,11 +99,21 @@ columns: [
         {
             'click .del': function (e, value, row, index)
             {
-                var temp=new object_data(row.name,row.price,row.nums)
-                console.log(data)
-                data.splice(index,1);
-                console.log(data)
-                 $("#table").bootstrapTable('load', data)
+                $.ajax({
+                    type: "post",
+                    url: "http://localhost:7070/untitled2_war/shopping_car",
+                    data: 
+                    {
+                        token:$.cookie('name'),
+                        book_name:row.book_name,
+                        method:"del"
+                    },
+                    dataType: "text",
+                    success: function (response) {
+                        console.log(JSON.parse(response))
+                        $('#table').bootstrapTable('load', JSON.parse(response));
+                    }
+                });
             },
             'click .check_detail':function(e,value,row,index)
             {
@@ -137,6 +147,33 @@ $(".total").click(function (e) {
     }
     $(".total_num").html(total_nums);
     // console.log(car_data)
+    if(getcol_data.length!=0)
+    {
+    $.ajax({
+        type: "post",
+        url: "http://localhost:7070/untitled2_war/shopping_car",
+        data: {
+            token: $.cookie('name'),
+            book_name: JSON.stringify(getcol_data),
+            method: "set_account",
+            total_nums:total_nums,
+            shoppinger:$(".shoppinger").html(),
+            address:$(".address").html(),
+            phone:$(".phone").html()
+        },
+        dataType: "text",
+        success: function (response) {
+            console.log(JSON.parse(response))
+            console.log("yes")
+            $(".total_num").html("0");
+            $("#table").bootstrapTable('load', JSON.parse(response))
+        }
+    });
+    }
+    else
+    {
+        console.log("no")
+    }
 });
 $(".add").click(function (e) { 
     var data=parseInt($(".count_num").html())+1;
@@ -149,16 +186,6 @@ $(".sub").click(function (e) {
         data=0;
     }
     $(".count_num").html(data);
-});
-
-$(".total").click(function (e) { 
-    console.log("结算完成")
-    var data1=$("#table").bootstrapTable('getSelections')
-    data.splice(0,data.length)
-     $("#table").bootstrapTable('load', data)
-    console.log(data1)
-    alert("付款完成")
-    $(".total_num").html(0);
 });
 var amoutn=0;
 // onCheckSome
@@ -193,7 +220,8 @@ $(".close_btn").click(function (e) {
         {
             token:$.cookie('name'),
             book_name: $(".objectname").html(),
-            book_nums:count
+            book_nums:count,
+            method:"updatenums"
         },
         dataType: "text",
         success: function (response) {

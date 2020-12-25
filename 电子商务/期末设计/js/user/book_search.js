@@ -76,22 +76,42 @@ columns: [{
               url: "http://localhost:7070/untitled2_war/book_search",
               data: {
                   token:$.cookie('name'),
-                  kk: JSON.stringify(row)
+                  kk: JSON.stringify(row),
+                  method:"shopping_car",
               },
               dataType: "text",
               success: function (response) {
                   console.log(response)
               }
           });
+       },
+       'click .add_collection':function(e,value,row,index)
+       {
+           console.log(row)
+
+           $.ajax({
+               type: "post",
+               url: "http://localhost:7070/untitled2_war/book_search",
+               data: {
+                   token: $.cookie('name'),
+                   kk: JSON.stringify(row),
+                   method: "add_collection",
+               },
+               dataType: "text",
+               success: function (response) {
+                   console.log(response)
+               }
+           });
        }
     },
     formatter:function(value,item,index)
         {
             item.id=false;
              var btnfix = '<button type="button" class="btn shadow-none add_car"> <img src="/img/bootstrap-icons-1.2.1/Cart-plus.svg " class="text-success" alt="" width="22" height="22" > </button>'
+             +'<button type="button" class="btn shadow-none add_collection"> <img src="/img/bootstrap-icons-1.2.1/Hand-thumbs-up.svg " class="text-success" alt="" width="22" height="22" > </button>'
              return btnfix
         },
-        width:500,
+        width:300,
 }
 ],
 
@@ -129,7 +149,8 @@ $(".total-car").click(function (e) {
         url: "http://localhost:7070/untitled2_war/book_search",
         data: {
             token: $.cookie('name'),
-            kk: JSON.stringify(data1[i])
+            kk: JSON.stringify(data1[i]),
+            method: "total_car"
         },
         dataType: "text",
         success: function (response) {

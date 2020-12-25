@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.dao.book_collectionMapper">
+    <select id="getusercollection" parameterType="string" resultType="book_collection">
+        select * from book_collection where userid=#{userid}
+    </select>
+    <delete id="delusercollection" parameterType="Map">
+        delete from book_collection where userid=#{userid} and book_name=#{book_name}
+    </delete>
+    <insert id="insertusercollection" parameterType="book_collection">
+        insert into book_collection(userid,book_name,category,book_price) values(#{userid},#{book_name},#{category},#{book_price})
+    </insert>
+    <select id="checksamedata" parameterType="Map" resultType="book_collection">
+        select * from book_collection where userid=#{userid} and book_name=#{book_name}
+    </select>
+</mapper>

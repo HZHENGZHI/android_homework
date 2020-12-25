@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="82d00263-b1a1-49c0-9dd2-472bf8b2bd95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/adminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/adminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_collectionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_collectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/buy_book_timeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/buy_book_timeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/order_listMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/order_listMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/admin_user.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/book_collection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/buy_book_time.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/order_list.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/order_list_table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/admin_login_servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/admin_manger_servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/boo_collection_servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/order_list_servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/user_msg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../final/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/.idea/final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../final/.idea/final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../final/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../final/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../final/final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/src/main/java/com/pojo/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final/src/main/java/com/pojo/user.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/src/main/java/com/serve/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final/src/main/java/com/serve/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final/src/test/java/kk.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final/src/test/java/kk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/tool/database.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/tool/database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_searchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_searchMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_searchMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/book_searchMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_addressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_addressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_addressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_addressMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_carMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_carMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_carMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/shopping_carMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/userMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/userMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/dao/userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/filter/checkstat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/filter/checkstat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/shopping_address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/shopping_address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/shopping_car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/pojo/shopping_car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/book_search.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/book_search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/shopping_address_servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/shopping_address_servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/shopping_car_servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/serve/shopping_car_servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/utilis/creat_jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/utilis/creat_jwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/utilis/mybatisutils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/com/kk/utilis/mybatisutils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/java/kk.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/java/kk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/resources/mybatis_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/resources/mybatis_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/src/test/java/tt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/src/test/java/tt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/com/dao/user_interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/com/pojo/user.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/com/serve/login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/com/utilis/mybatis_utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/classes/mybatis_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/classes/mybatis_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/test-classes/tt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/test-classes/tt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2.war" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/untitled2.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/dao/user_interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/kk/utilis/mybatisutils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/kk/utilis/mybatisutils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/pojo/user.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/serve/login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/com/utilis/mybatis_utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/mybatis_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/classes/mybatis_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled2/target/untitled2/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled2/target/untitled2/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/css/admin/k" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/admin/book_manger.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/public/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/public/nav_head.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/public/nav_head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/test/k.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/test/k.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/address_manger.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/address_manger.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/book_collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/book_collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/book_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/book_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/book_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/book_show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/book_shpping_car.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/book_shpping_car.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/finish_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/finish_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/index1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/notyet_finish_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/notyet_finish_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/html/user/preson_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/html/user/preson_center.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/admin/k" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/address_manger.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/address_manger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/book_collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/book_collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/book_search.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/book_search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/book_shpping_car.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/book_shpping_car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/finish_order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/finish_order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../期末设计/js/user/notyet_finish_order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../期末设计/js/user/notyet_finish_order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/public/nav_head.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/public/nav_head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/address_manger.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/address_manger.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/book_collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/book_collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/finish_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/finish_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/notyet_finish_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/notyet_finish_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/preson_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/html/user/preson_center.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/address_manger.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/address_manger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_search.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_shpping_car.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/book_shpping_car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/finish_order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/finish_order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/notyet_finish_order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../电子商务/期末设计/js/user/notyet_finish_order.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/repository" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lx7vP44Xd2KcjP9ZlvMLePikTI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82d00263-b1a1-49c0-9dd2-472bf8b2bd95" name="Default Changelist" comment="" />
+      <created>1608527120202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608527120202</updated>
+      <workItem from="1608527122731" duration="981000" />
+      <workItem from="1608528782246" duration="1023000" />
+      <workItem from="1608896961391" duration="80000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1608528761175">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1608528761175" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1608527912830" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1608528761174">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1608528761174" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1608527912828" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1608528761174">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1608528761174" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1608527912827" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1608528761175">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1608528761175" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1608527912829" />
+    <state x="208" y="21" key="SettingsEditor" timestamp="1608529055216">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="208" y="21" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1608529055216" />
+    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1608527782009" />
+    <state x="88" y="113" key="new project wizard" timestamp="1608529297330">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="88" y="113" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1608529297330" />
+  </component>
+</project>

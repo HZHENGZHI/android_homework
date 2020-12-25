@@ -1,8 +1,10 @@
 package com.kk.serve;
 
 
-import com.kk.dao.user_interface;
+import com.google.gson.Gson;
+import com.kk.dao.userMapper;
 import com.kk.pojo.User;
+import com.kk.utilis.creat_jwt;
 import com.kk.utilis.mybatisutils;
 import org.apache.ibatis.session.SqlSession;
 
@@ -21,24 +23,33 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userid=request.getParameter("id");
         String userpw=request.getParameter("pw");
-        User user = new User(userid,userpw);
+        User user = new User(userid,userpw,"","","");
         SqlSession sqlSession =mybatisutils.getsqlsession();
-        user_interface mapper=sqlSession.getMapper(user_interface.class);
+        userMapper mapper=sqlSession.getMapper(userMapper.class);
         List<User> users=mapper.checkuser(user);
         PrintWriter out=response.getWriter();
-        out.println(users.size());
+        Gson gson=new Gson();
+        if(users.size()==1)
+        {
+            String jwt= creat_jwt.creatloginjwt("userid",userid,"userpw",userpw);
+            String token=gson.toJson(jwt);
+            out.println(token);
+            System.out.println(jwt);
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        SqlSession sqlSession= mybatisutils.getsqlsession();
-//        PrintWriter out=response.getWriter();
-//        user_interface mapeer=sqlSession.getMapper(user_interface.class);
-//        List<User> kk = mapeer.checkuser();
-//        System.out.println(kk);
-//        Gson gson=new Gson();
-//        String data=gson.toJson(kk);
-//        System.out.println(data);
-//        out.print(data);
+        String token=request.getParameter("token");
+        String jwt= creat_jwt.valitoken(token);
+        PrintWriter out=response.getWriter();
+        if(jwt.equals("ok"))
+        {
+            out.println(1);
+        }
+        else
+        {
+            out.println(0);
+        }
     }
 }

@@ -22,7 +22,7 @@ public class mybatisutils {
     }
     public static SqlSession getsqlsession()
     {
-        return  sqlSessionFactory.openSession();
+        return  sqlSessionFactory.openSession(true);
     }
 
 

@@ -1,8 +1,15 @@
+// function book(picture, name, IBSN, price)
+// {
+//     this.picture = picture;
+//     this.name=name;
+//     this.IBSN=IBSN;
+//     this.price=price;
+// }
 
-var path=[];
-path[0]="https://img2.doubanio.com/view/ark_article_cover/retina/public/24283113.jpg?v=0"
 
-var temp=0
+// var data=[];
+// data[0] = new book("https://source.acexy.cn/view/XaFp5ry","哈姆雷特", "9787552701074", "65")
+// var temp=0
 
 
 const TYPES = ['info', 'warning', 'success', 'error'],
@@ -29,73 +36,43 @@ $.toastDefaults.pauseDelayOnHover = true;
 
 $('#table').bootstrapTable({
     search:true,
-    uniqueId:'IBSN',
+    ajax: function (request) {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:7070/untitled2_war/book_collection_servlet",
+            data: {
+                token: $.cookie('name')
+            },
+            jsonp: 'callback',
+            success: function (msg) {
+                request.success({
+                    row: JSON.parse(msg)
+                });
+                $('#table').bootstrapTable('load', JSON.parse(msg));
+                data = JSON.parse(msg)
+                // console.log(data)
+            },
+        });
+    },
     columns: [
-   
-    {
-        field:'picture',
-        title:'书本封面',
-        formatter:function(value,item,index)
-        {
-            item.id=false;
-            if(temp<path.length)
-            {
-                var img="<img src="+path[temp]+" class='img-fluid' alt='Responsive image'style='height: 75px; width: 50px;'>"
-                temp++;
-            }
-           
-            return img
-        },
-        width:80
-    },
-    {
-        field:'name',
-        title:'书籍名称',
-        width:400,
-        cellStyle:{
-            css:
-            {
-               " text-align":"center",
-               "font-size": "x-large"
-            }
-        }
-    },
-    {
-        field:'IBSN',
-        title:'IBSN',
-        width:400,
-        cellStyle:{
-            css:
-            {
-               "text-align":"center",
-               "font-size": "x-large"
-            }
-        }
-    },
-    {
-        field:'price',
-        title:'价格',
-        cellStyle:{
-            css:
-            {
-               " text-align":"center",
-               "font-size": "x-large"
-            }
-        }
-    },
+  {
+      field: 'book_name',
+      title: '书名',
+      clickToSelect: true,
+  }, {
+      field: 'category',
+      title: "类别",
+      sortable: true,
+  }, {
+      field: 'book_price',
+      title: '价钱',
+      sortable: true,
+  },
     {
         field:'opertion',
         title:'操作',
         events:
         {
-           'click .delmove':function(e,value,row,index)
-           {
-            alert("是否移出收藏夹")
-            console.log(temp);
-            $('#table').bootstrapTable('removeByUniqueId',row.IBSN)
-            temp=index+1;
-            console.log(temp);
-           },
            'click .bttn':function(e,value,row,index)
            {
             var rng = 1,
@@ -103,7 +80,8 @@ $('#table').bootstrapTable({
             title = TITLES[type],
             content = CONTENT[type];
 
-            if (rng === 1) {
+            if (rng === 1) 
+            {
             $.toast({
                 type: type,
                 title: title,
@@ -111,27 +89,59 @@ $('#table').bootstrapTable({
                 content: content,
                 delay: 5000
             });
+            $.ajax({
+                type: "post",
+                url: "http://localhost:7070/untitled2_war/book_search",
+                data: {
+                    token: $.cookie('name'),
+                    kk: JSON.stringify(row),
+                    method: "shopping_car"
+                },
+                dataType: "text",
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+            }
+        },
+        'click .del':function(e,value,row,index)
+        {
+            {
+                $.toast({
+                    type: TYPES[0],
+                    title: TITLES[TYPES[0]],
+                    subtitle: '',
+                    content: "提示:已移出收藏夹",
+                    delay: 5000
+                });
+            }
+            $.ajax({
+                type: "post",
+                url: "http://localhost:7070/untitled2_war/book_collection_servlet",
+                data: 
+                {
+                    token:$.cookie('name'),
+                    book_name:row.book_name
+                },
+                dataType: "text",
+                success: function (response) {
+                    $('#table').bootstrapTable('load', JSON.parse(response));
+                }
+            });
         }
-           }
-
         },
         formatter:function(value,item,index)
             {
                 item.id=false;
-                var btnfix=" <button type='button' class='btn btn-primary bttn' style='margin-right: 15px;'>加入购物车</button>"
-                +"<button type='button' class='btn btn-primary delmove' style='margin-right: 15px;'>移出收藏</button>"
+                 var btnfix = '<button type="button" class="btn shadow-none bttn"> <img src="/img/bootstrap-icons-1.2.1/Cart-plus.svg " class="text-success" alt="" width="22" height="22" > </button>'+
+                 '<button type="button" class="btn shadow-none del"> <img src="/img/bootstrap-icons-1.2.1/Trash.svg " class="text-success" alt="" width="22" height="22" > </button>'
                 return btnfix
             },
-            width:500,
     }
     ],
-    data:
-    [
+    data:[
         {
-            
-            name:'哈姆雷特',
-            IBSN:'9787552701074',
-            price:'123'
+
         }
     ]
     

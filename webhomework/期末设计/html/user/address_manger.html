@@ -17,6 +17,8 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
         <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+        <script src="/js/locale/bootstrap-table-zh-CN.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <title>首页</title>
 </head>
 
@@ -38,29 +40,28 @@
 
 
 
-  <div class="container row">
-    <div class="btn-group-vertical">
+  <div class="container  float-none">
 
-      <div class="btn-group" role="group">
-        <button id="order_center" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          订单中心
-        </button>
-        <div class="dropdown-menu" aria-labelledby="order_center">
-          <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
-          <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
-        </div>
-      </div>
-      <button id="shopping_car" type="button" class="btn btn-primary" style="height:30px">
-        地址管理
-      </button>
-      <button id="person_center" type="button" class="btn btn-light">
-        个人中心
-      </button>
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <a href="/html/user/preson_center.html" class="btn btn-primary add">个人中心</a>
+  <a href="/html/user/address_manger.html" class="btn btn-primary add">地址管理</a>
+
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      订单中心
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
+        <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
     </div>
-      <div class="col">
+  </div>
+</div>
+
+      <div class="">
          <table id="table"></table>
       </div>
+  </div>
       <script>
         $("#shopping_car").click(function (e) {
           e.preventDefault();

@@ -13,7 +13,7 @@ $.ajax({
     {
       console.log($.cookie('name'))
       console.log("yes")
-      window.location.href = "/html/user/index1.html"
+      window.location.href = "/html/user/book_search.html"
     }
   }
 });
@@ -32,7 +32,7 @@ $("#login").click(function (e) {
     success: function (response) {
       // if(parseInt(response)==1)
       {
-        window.location.href="/html/user/index1.html"
+        window.location.href="/html/user/book_search.html"
         $.cookie('name', response, {expires: 30});
         name = $.cookie('name'); 
         console.log(name)
