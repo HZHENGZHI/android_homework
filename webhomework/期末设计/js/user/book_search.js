@@ -6,7 +6,7 @@ const TYPES = ['info', 'warning', 'success', 'error'],
         'error': '出现未知错误!'
     },
     CONTENT = {
-        'info': 'Hello, world! This is a toast message.',
+        'info': '已加入收藏',
         'success': '加入购物车成功!',
         'warning': '加入购物车失败!',
         'error': '库存不足!'
@@ -100,7 +100,24 @@ columns: [{
                dataType: "text",
                success: function (response) {
                    console.log(response)
-               }
+
+                   console.log(row)
+                    var rng = 1,
+                        type = TYPES[0],
+                        title = TITLES[type],
+                        content = CONTENT[type];
+
+                    if (rng === 1) {
+                        $.toast({
+                            type: type,
+                            title: title,
+                            subtitle: '',
+                            content: content,
+                            delay: 5000
+                        });
+
+                        }
+            }
            });
        }
     },

@@ -61,7 +61,9 @@ $('#table').bootstrapTable({
              },
              dataType: "text",
              success: function (response) {
+                alert("提示:正在执行删除地址")
                 $('#table').bootstrapTable('load', JSON.parse(response));
+              
              }
            });
         }
@@ -108,7 +110,7 @@ $(".add_address").click(function (e)
   {
     token:$.cookie('name'),
     phone:$(".add_phone").val(),
-    address:$(".add_address").val(),
+    address:$(".add_address1").val(),
     shoppinger:$(".add_shoppinger").val(),
     method:"add_address"
   },
@@ -116,9 +118,9 @@ $(".add_address").click(function (e)
   success: function (response) {
     $('#table').bootstrapTable('load', JSON.parse(response));
     $(".add_phone").val("")
-    $(".add_address").val("")
+    $(".add_address1").val("")
     $(".add_shoppinger").val("")
-
+    alert("提示:正在添加地址数据")
   }
 });
 });
