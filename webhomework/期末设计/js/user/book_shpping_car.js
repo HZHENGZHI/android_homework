@@ -1,26 +1,60 @@
-function object_data(name,nums,price)
+function object_data(book_name,book_nums,book_price)
 {
-   
-    this.name = name;
-    this.nums=nums;
-    this.price=price;
+    this.book_name = book_name;
+    this.book_nums = book_nums;
+    this.book_price = book_price;
+    this.setState = function (book_nums) {
+        this.book_nums = book_nums;
+    }
 }
-var data=[]
-data[0]=new object_data("1231","123","123");
-data[1] = new object_data("1232", "123", "123");
-data[2] = new object_data("1233", "123", "123")
 
+var data=[]
+// data[0]=new object_data("1231","123","123");
+var index1=0;
+
+
+
+
+window.onload = function () 
+{
+    $.ajax({
+        type: "get",
+        url: "http://localhost:7070/untitled2_war/shopping_address",
+        data: 
+        {
+            token:this.$.cookie('name')
+        },
+        dataType: "text",
+        success: function (response) {
+            data=JSON.parse(response)
+            $(".address").html(data.shopping_address);
+            $(".phone").html(data.phone);
+            $(".shoppinger").html(data.shoppinger);
+            
+        }
+    });
+}
 
 $('#table').bootstrapTable({
-    // search:true,
-    // pagination:true,
-    // paginationLoop:true,
-    // toolbar:'toolbar',
-    local:'zh-CN',
-    // url:"",
-    // method:"GET",
-    // toolbar:'#toolbar',//工具栏
-   
+local:'zh-CN',
+ajax: function (request) {
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:7070/untitled2_war/shopping_car",
+        data: {
+            token:$.cookie('name')
+        },
+        jsonp: 'callback',
+        success: function (msg) {
+            request.success({
+                row: JSON.parse(msg)
+            });
+            $('#table').bootstrapTable('load', JSON.parse(msg));
+            data = JSON.parse(msg)
+            // console.log(data)
+        },
+    });
+},
 columns: [
     {
     field: 'id',
@@ -28,7 +62,7 @@ columns: [
     checkbox:true,
     },
     {
-        field:'name',
+        field:'book_name',
         title:'商品名称',
         cellStyle: {
             css: {
@@ -39,7 +73,7 @@ columns: [
        
     },
     {
-        field:'nums',
+        field:'book_nums',
         title:'商品数量',
         cellStyle: {
             css: {
@@ -49,7 +83,7 @@ columns: [
         }
     },
     {
-        field:'price',
+        field:'book_price',
         title:'商品金额',
         cellStyle: {
             css: {
@@ -65,17 +99,29 @@ columns: [
         {
             'click .del': function (e, value, row, index)
             {
-                var temp=new object_data(row.name,row.price,row.nums)
-                console.log(data)
-                data.splice(index,1);
-                console.log(data)
-                 $("#table").bootstrapTable('load', data)
+                $.ajax({
+                    type: "post",
+                    url: "http://localhost:7070/untitled2_war/shopping_car",
+                    data: 
+                    {
+                        token:$.cookie('name'),
+                        book_name:row.book_name,
+                        method:"del"
+                    },
+                    dataType: "text",
+                    success: function (response) {
+                        console.log(JSON.parse(response))
+                        $('#table').bootstrapTable('load', JSON.parse(response));
+                    }
+                });
             },
             'click .check_detail':function(e,value,row,index)
             {
-               var origin = row.nums;
+                index1=index;
+               console.log(index)
+               var origin = row.book_nums;
                 $(".count_num").html(origin);
-                $(".objectname").html(row.name);
+                $(".objectname").html(row.book_name);
             },
         },
         formatter: function (value, item, index) {
@@ -87,17 +133,47 @@ columns: [
         width:360
     }
 ],
-    data:data
 })
+
+
+
 $(".total").click(function (e) { 
     var getcol_data=$("#table").bootstrapTable('getSelections')
     var total_nums=0
     for(var i=0;i<getcol_data.length;i++)
     {
-        total_nums += parseInt(getcol_data[i].price*getcol_data[i].nums)
+        total_nums += parseInt(getcol_data[i].book_price*getcol_data[i].book_nums)
         
     }
     $(".total_num").html(total_nums);
+    // console.log(car_data)
+    if(getcol_data.length!=0)
+    {
+    $.ajax({
+        type: "post",
+        url: "http://localhost:7070/untitled2_war/shopping_car",
+        data: {
+            token: $.cookie('name'),
+            book_name: JSON.stringify(getcol_data),
+            method: "set_account",
+            total_nums:total_nums,
+            shoppinger:$(".shoppinger").html(),
+            address:$(".address").html(),
+            phone:$(".phone").html()
+        },
+        dataType: "text",
+        success: function (response) {
+            console.log(JSON.parse(response))
+            console.log("yes")
+            $(".total_num").html("0");
+            $("#table").bootstrapTable('load', JSON.parse(response))
+        }
+    });
+    }
+    else
+    {
+        console.log("no")
+    }
 });
 $(".add").click(function (e) { 
     var data=parseInt($(".count_num").html())+1;
@@ -111,45 +187,46 @@ $(".sub").click(function (e) {
     }
     $(".count_num").html(data);
 });
-
-$(".total").click(function (e) { 
-    console.log("结算完成")
-    var data1=$("#table").bootstrapTable('getSelections')
-    data.splice(0,data.length)
-     $("#table").bootstrapTable('load', data)
-    console.log(data1)
-    alert("付款完成")
-    $(".total_num").html(0);
-});
 var amoutn=0;
 // onCheckSome
 $('#table').on('check.bs.table', function (row, $element) {
-    amoutn += $element.price * $element.nums
+    amoutn += $element.book_price * $element.book_nums
     $(".total_num").html(amoutn);
-    // console.log($element.price)
-    // ...
 })
 $('#table').on('uncheck.bs.table', function (row, $element) {
-    amoutn -= $element.price * $element.nums
+    amoutn -= $element.book_price * $element.book_nums
     $(".total_num").html(amoutn);
-    // console.log($element.price)
-    // ...
 })
 
 $('#table').on('check-all.bs.table', function (rowsAfter, rowsBefore) {
     amoutn=0;
     for(var i=0;i<rowsBefore.length;i++)
     {
-        amoutn+=rowsBefore[i].price*rowsBefore[i].nums
-        // console.log(rowsBefore[i])
+        amoutn+=rowsBefore[i].book_price*rowsBefore[i].book_nums
     }
     $(".total_num").html(amoutn);
-    // ...
 })
 
 $('#table').on('uncheck-all.bs.table', function (rowsAfter, rowsBefore) {
     amoutn = 0;
     $(".total_num").html(amoutn);
-    // ...
 })
-// onUncheckSome
+$(".close_btn").click(function (e) { 
+    var count = parseInt($(".count_num").html());
+    $.ajax({
+        type: "post",
+        url: "http://localhost:7070/untitled2_war/shopping_car",
+        data: 
+        {
+            token:$.cookie('name'),
+            book_name: $(".objectname").html(),
+            book_nums:count,
+            method:"updatenums"
+        },
+        dataType: "text",
+        success: function (response) {
+            console.log(JSON.parse(response))
+            $("#table").bootstrapTable('load', JSON.parse(response))
+        }
+    });
+});

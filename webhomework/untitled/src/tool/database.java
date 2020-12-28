@@ -26,7 +26,6 @@ public class database {
     public static ResultSet select(String sql) throws SQLException, ClassNotFoundException {
         ResultSet re = getStat().executeQuery(sql);
         return re;
-
     }
 
     public static void  delete(String sql) throws SQLException, ClassNotFoundException {

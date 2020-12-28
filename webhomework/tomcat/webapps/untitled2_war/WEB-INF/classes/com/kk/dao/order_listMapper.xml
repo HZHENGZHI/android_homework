@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.dao.order_listMapper">
+    <insert id="inserdata" parameterType="Map">
+        insert into order_list(userid,time,timeid,shopping_address,shoppinger,total_price,sigin)
+        values
+        (#{userid},#{time},#{timeid},#{shoppinger_address},#{shoppinger},#{total_price},#{sigin})
+    </insert>
+    <resultMap id="resultOrderMap" type="order_list">
+        <result property="time" column="time"/>
+        <result property="shopping_address" column="shopping_address"/>
+        <result property="shoppinger" column="shoppinger"/>
+        <result property="total_price" column="total_price"/>
+        <result property="sigin" column="sigin"/>
+        <collection property="buy_book_time" ofType="buy_book_time" column="book_book_time">
+            <result property="book_name" column="book_name"/>
+            <result property="book_nums" column="book_nums"/>
+            <result property="book_price" column="book_price"/>
+            <result property="timeMils" column="timeMils"/>
+        </collection>
+    </resultMap>
+    <select id="selectuserorder" resultMap="resultOrderMap" parameterType="Map">
+        select * from order_list,buy_book_time where order_list.timeid=buy_book_time.timeMils and order_list.userid=#{userid} and order_list.sigin=#{sigin}
+    </select>
+    <update id="updateusersigin" parameterType="Map">
+        update order_list set sigin=#{sigin} where userid=#{userid} and time=#{time}
+    </update>
+</mapper>

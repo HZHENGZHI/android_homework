@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.dao.book_searchMapper">
+    <select id="getallbook" resultType="book">
+        select  * from book
+    </select>
+    <insert id="addshoppingcar" parameterType="car">
+        insert into shopping_car (userid,book_name,book_nums,book_price) values (#{userid},#{book_name},#{book_nums},#{book_price})
+    </insert>
+    <select id="checkIssave" resultType="car" parameterType="car">
+        select * from shopping_car where userid=#{userid} and book_name=#{book_name}
+    </select>
+    <update id="updatecar" parameterType="car">
+        update shopping_car set book_nums=#{book_nums}
+        where userid=#{userid} and book_name=#{book_name}
+    </update>
+
+    <update id="updatebook" parameterType="book">
+        update book set book_price=#{book_price} where book_name=#{book_name} and category=#{category}
+    </update>
+
+    <delete id="delbook" parameterType="book">
+        delete from book where book_name=#{book_name} and category=#{category}
+    </delete>
+
+    <insert id="inserbook" parameterType="book">
+        insert into book(book_name,category,book_price) values (#{book_name},#{category},#{book_price})
+    </insert>
+</mapper>

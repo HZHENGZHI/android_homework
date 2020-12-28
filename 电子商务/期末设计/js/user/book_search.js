@@ -24,9 +24,9 @@ $('#table').bootstrapTable({
     paginationLoop:true,
     toolbar:'toolbar',
     local:'zh-CN',
-    url:"",
-    method:"GET",
     toolbar:'#toolbar',//工具栏
+    url: "http://localhost:7070/untitled2_war/book_search",
+    method:"GET",
    
 columns: [{
     field: 'id',
@@ -56,6 +56,7 @@ columns: [{
     {
        'click .add_car':function(e,value,row,index)
        {
+           console.log(row)
           var rng = 1,
               type = TYPES[2],
               title = TITLES[type],
@@ -70,62 +71,93 @@ columns: [{
                   delay: 5000
               });
           }
+          $.ajax({
+              type: "post",
+              url: "http://localhost:7070/untitled2_war/book_search",
+              data: {
+                  token:$.cookie('name'),
+                  kk: JSON.stringify(row),
+                  method:"shopping_car",
+              },
+              dataType: "text",
+              success: function (response) {
+                  console.log(response)
+              }
+          });
+       },
+       'click .add_collection':function(e,value,row,index)
+       {
+           console.log(row)
+
+           $.ajax({
+               type: "post",
+               url: "http://localhost:7070/untitled2_war/book_search",
+               data: {
+                   token: $.cookie('name'),
+                   kk: JSON.stringify(row),
+                   method: "add_collection",
+               },
+               dataType: "text",
+               success: function (response) {
+                   console.log(response)
+               }
+           });
        }
     },
     formatter:function(value,item,index)
         {
             item.id=false;
              var btnfix = '<button type="button" class="btn shadow-none add_car"> <img src="/img/bootstrap-icons-1.2.1/Cart-plus.svg " class="text-success" alt="" width="22" height="22" > </button>'
+             +'<button type="button" class="btn shadow-none add_collection"> <img src="/img/bootstrap-icons-1.2.1/Hand-thumbs-up.svg " class="text-success" alt="" width="22" height="22" > </button>'
              return btnfix
         },
-        width:500,
+        width:300,
 }
 ],
-data: [
-{
-    id: '',
-    book_name: 'java的编程思想',
-    category:"计算机",
-    book_price: '100',
-}, 
-{
-    id: '',
-    book_name: '移动web开发从--从入门到精通',
-    category:"计算机",
-    book_price: '49',
-}, 
-{
-    id: '',
-    book_name: '安卓开发入门',
-    category:"计算机",
-    book_price: '69',
-}, 
-]
+
 })
 $(".add_car").click(function (e) { 
     var data=$("#table").bootstrapTable('getSelections')
     var k=JSON.stringify(data)
+    
     // console.log("1234")
    
     
 });
 $(".total-car").click(function (e) { 
     e.preventDefault();
-    var data=$("#table").bootstrapTable('getSelections')
-    console.log(data);
-             var rng = 1,
-                 type = TYPES[2],
-                 title = TITLES[type],
-                 content = CONTENT[type];
+    var data1=$("#table").bootstrapTable('getSelections')
+    var rng = 1,
+        type = TYPES[2],
+        title = TITLES[type],
+        content = CONTENT[type];
 
-             if (rng === 1) {
-                 $.toast({
-                     type: type,
-                     title: title,
-                     subtitle: '',
-                     content: content,
-                     delay: 5000
-                 });
-             }
+    if (rng === 1) {
+        $.toast({
+            type: type,
+            title: title,
+            subtitle: '',
+            content: content,
+            delay: 5000
+        });
+    }
+
+    for (var i=0;i<data1.length;i++)
+    {  
+        $.ajax({
+        type: "post",
+        url: "http://localhost:7070/untitled2_war/book_search",
+        data: {
+            token: $.cookie('name'),
+            kk: JSON.stringify(data1[i]),
+            method: "total_car"
+        },
+        dataType: "text",
+        success: function (response) {
+            // console.log(response)
+        }
+    });
+    }
+
 
 });
