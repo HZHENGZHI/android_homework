@@ -40,28 +40,104 @@
 
 
 
-  <div class="container  float-none">
+  <div class="container">
 
-<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-  <a href="/html/user/preson_center.html" class="btn btn-primary add">个人中心</a>
-  <a href="/html/user/address_manger.html" class="btn btn-primary add">地址管理</a>
 
-  <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      订单中心
-    </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
-        <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
-    </div>
-  </div>
-</div>
+      <div class="btn-group " role="group" aria-label="Button group with nested dropdown">
+        <div id="toolbar">
+          <a href="#" class="btn btn-primary "  data-toggle="modal" data-target="#add_address">添加地址</a>
+        </div>
+        <a href="/html/user/preson_center.html" class="btn btn-primary add">个人中心</a>
+        <a href="/html/user/address_manger.html" class="btn btn-primary add">地址管理</a>
 
-      <div class="">
-         <table id="table"></table>
+        <div  class="btn-group row" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            订单中心
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="/html/user/finish_order.html">已完成订单</a>
+              <a class="dropdown-item" href="/html/user/notyet_finish_order.html">未完成订单</a>
+          </div>
+        </div> 
       </div>
+
+
+
+          <div>
+            <table id="table"></table>
+          </div>
+
+
+          <div class="modal  fade " id="add_address" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">地址详细</h5>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="col">
+                  <span>收货人</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_shoppinger" >
+                  </div>
+                  <span>地址</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_address">
+                  </div>
+                  <span>手机号</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control add_phone">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary add_address" data-dismiss="modal">确定</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="modal  fade " id="address_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">地址详细</h5>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="col">
+                <span>收货人</span>
+                <div class="input-group">
+                  <input type="text" class="form-control shoppinger" >
+                </div>
+                <span>地址</span>
+                <div class="input-group">
+                  <input type="text" class="form-control address">
+                </div>
+                <span>手机号</span>
+                <div class="input-group">
+                  <input type="text" class="form-control phone">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary address_confirm" data-dismiss="modal">确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
   </div>
+
+
+
       <script>
         $("#shopping_car").click(function (e) {
           e.preventDefault();
