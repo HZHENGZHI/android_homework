@@ -49,13 +49,26 @@ $('#table').bootstrapTable({
         },
         'click .del': function (e, value, row, index)
         {
-          console.log("删除")
+           $.ajax({
+             type: "post",
+             url: "http://localhost:7070/untitled2_war/shopping_address",
+             data: {
+               token: $.cookie('name'),
+               phone:row.phone,
+               address:row.shopping_address,
+               shoppinger:row.shoppinger,
+               method: "del_address"
+             },
+             dataType: "text",
+             success: function (response) {
+                $('#table').bootstrapTable('load', JSON.parse(response));
+             }
+           });
         }
       },
       formatter: function (value, item, index) {
         item.id = false;
-        var btnfix = '<button type="button" class="btn shadow-none edit" style="margin-left:-10px"  data-toggle="modal" data-target="#address_edit"> <img src="/img/bootstrap-icons-1.2.1/Pencil-square.svg " class="text-success" alt="" width="22" height="22" > </button>'
-        +'<button type="button" class="btn shadow-none del"> <img src="/img/bootstrap-icons-1.2.1/Trash.svg " class="text-success" alt="" width="22" height="22" > </button>'
+        var btnfix ='<button type="button" class="btn shadow-none del"> <img src="/img/bootstrap-icons-1.2.1/Trash.svg " class="text-success" alt="" width="22" height="22" > </button>'
            return btnfix
       },
     }
@@ -63,12 +76,49 @@ $('#table').bootstrapTable({
 })
 
 $(".address_confirm").click(function (e) { 
-  e.preventDefault();
-   console.log("edit address")
-  
+  // e.preventDefault();
+  //  console.log("edit address")
+  //  $.ajax({
+  //    type: "post",
+  //    url: "http://localhost:7070/untitled2_war/shopping_address",
+  //    data: 
+  //    {
+  //      token:$.cookie('name'),
+  //      phone:$(".phone").val(),
+  //      address:$(".address").val(),
+  //      shoppinger:$(".shoppinger").val(),
+  //      method:"edit_address"
+  //    },
+  //    dataType: "text",
+  //    success: function (response) {
+       
+  //    }
+  //  });
 });
 
-$(".add_address").click(function (e) { 
+$(".add_address").click(function (e) 
+{ 
   e.preventDefault();
  console.log("add address")
+
+ $.ajax({
+  type: "post",
+  url: "http://localhost:7070/untitled2_war/shopping_address",
+  data: 
+  {
+    token:$.cookie('name'),
+    phone:$(".add_phone").val(),
+    address:$(".add_address").val(),
+    shoppinger:$(".add_shoppinger").val(),
+    method:"add_address"
+  },
+  dataType: "text",
+  success: function (response) {
+    $('#table').bootstrapTable('load', JSON.parse(response));
+    $(".add_phone").val("")
+    $(".add_address").val("")
+    $(".add_shoppinger").val("")
+
+  }
+});
 });

@@ -5,7 +5,7 @@ public class shopping_address {
     private String shoppinger;
     private String shopping_address;
     private String phone;
-    private String sigin;
+    private String sigin;//优先级标志位
 
     public shopping_address() {
     }
