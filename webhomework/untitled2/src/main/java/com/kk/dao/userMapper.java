@@ -12,4 +12,6 @@ public interface userMapper {
     public User getusermsg(String userid);
     //获取用户的所有地址信息
     public List<shopping_address> getuseraddreess(String userid);
+
+    public void resiginuser(User user);
 }
