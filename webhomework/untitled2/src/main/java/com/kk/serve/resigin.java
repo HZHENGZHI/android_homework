@@ -35,11 +35,13 @@ public class resigin extends HttpServlet {
         System.out.println(user1);
         if(user1!=null)
         {
+            System.out.println("kk");
             String data=gson.toJson("1");
             out.print(data);
         }
         else
         {
+            System.out.println("kk1");
             mapper.resiginuser(user);
             String data=gson.toJson("0");
             out.print(data);

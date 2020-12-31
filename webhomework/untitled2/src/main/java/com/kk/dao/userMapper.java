@@ -14,4 +14,9 @@ public interface userMapper {
     public List<shopping_address> getuseraddreess(String userid);
 
     public void resiginuser(User user);
+    //获取所有用户数据
+    public List<User> getalluser();
+
+    //删除用户信息
+    public void deluser(String userid);
 }

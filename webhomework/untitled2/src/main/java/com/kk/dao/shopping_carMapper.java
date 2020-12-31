@@ -14,4 +14,6 @@ public interface shopping_carMapper {
     public int deluserdetail(shopping_car car);
     //当书本当数目为0时进行删除
     public int deluserbook(Map<String,String>map);
+    //删除用户购物车
+    public void delusercar(String userid);
 }

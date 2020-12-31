@@ -16,4 +16,10 @@
 		insert  into user (userid,userpw,truename,birthday,sex)
 		values(#{userid},#{userpw},#{truename},#{birthday},#{sex})
 	</insert>
+	<select id="getalluser" resultType="user">
+		select * from user
+	</select>
+	<delete id="deluser" parameterType="string" >
+		delete  from user where userid=#{userid}
+	</delete>
 </mapper>

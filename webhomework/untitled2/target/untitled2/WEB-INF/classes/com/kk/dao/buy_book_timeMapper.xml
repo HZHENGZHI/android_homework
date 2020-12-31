@@ -6,4 +6,7 @@
     <insert id="insertdata" parameterType="buy_book_time">
         insert into buy_book_time(userid,timeMils,book_name,book_nums,book_price) values(#{userid},#{timeMils},#{book_name},#{book_nums},#{book_price})
     </insert>
+    <delete id="deluserbook" parameterType="string">
+        delete from buy_book_time where userid=#{userid}
+    </delete>
 </mapper>

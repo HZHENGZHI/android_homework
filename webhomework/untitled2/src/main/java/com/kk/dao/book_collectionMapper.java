@@ -14,4 +14,6 @@ public interface book_collectionMapper {
     public int insertusercollection(book_collection collection);
     //搜索用户收藏中是否存在相同的数据
     public List<book_collection> checksamedata(Map<String,String>map);
+    //删除用户收藏
+    public void deluserallcollection(String userid);
 }

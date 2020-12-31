@@ -41,7 +41,6 @@ public class book_search extends HttpServlet {
         books =gson.fromJson(data,book.class);
         shopping_car car=new shopping_car(userid,books.getBook_name(),"1",books.getBook_price());
         List<shopping_car> shopping_carList=mapper.checkIssave(car);
-//        System.out.println(shopping_carList);
 
         if(method.equals("shopping_car") || method.equals("total_car"))
         {

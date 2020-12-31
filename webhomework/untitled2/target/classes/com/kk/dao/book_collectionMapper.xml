@@ -15,4 +15,7 @@
     <select id="checksamedata" parameterType="Map" resultType="book_collection">
         select * from book_collection where userid=#{userid} and book_name=#{book_name}
     </select>
+    <delete id="deluserallcollection" parameterType="string">
+        delete from book_collection where userid=#{userid}
+    </delete>
 </mapper>

@@ -27,4 +27,8 @@
     <update id="updateusersigin" parameterType="Map">
         update order_list set sigin=#{sigin} where userid=#{userid} and time=#{time}
     </update>
+
+    <delete id="deluserorderlist" parameterType="string" >
+        delete from order_list where userid=#{userid}
+    </delete>
 </mapper>

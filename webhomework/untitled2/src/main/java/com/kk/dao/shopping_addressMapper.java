@@ -11,4 +11,6 @@ public interface shopping_addressMapper {
     public void add_address(shopping_address address);
     //删除地址
     public void del_address(shopping_address address);
+    //删除用户数据
+    public void deluseraddress(String userid);
 }

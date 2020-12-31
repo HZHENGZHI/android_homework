@@ -17,4 +17,7 @@
     <delete id="deluserbook" parameterType="Map">
         delete from shopping_car where userid=#{userid} and book_name=#{book_name}
     </delete>
+    <delete id="delusercar" parameterType="string">
+        delete from shopping_car where userid=#{userid}
+    </delete>
 </mapper>
