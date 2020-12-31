@@ -1,4 +1,11 @@
 package com.kk.serve;
+<<<<<<< HEAD
+
+@javax.servlet.annotation.WebServlet(name = "resigin")
+public class resigin extends javax.servlet.http.HttpServlet {
+    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+=======
+>>>>>>> c9016ca85ca35ab72d8356f18623e827fc33bb41
 
 import com.google.gson.Gson;
 import com.kk.dao.userMapper;
