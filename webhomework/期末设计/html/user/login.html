@@ -128,9 +128,8 @@
           },
           dataType: "text",
           success: function (response) {
-            if(response=="1")
+            if(JSON.parse(response)=="1")
             {
-              console.log("yes")
               alert("账号已存在")
             }
             else
@@ -155,3 +154,4 @@
   <script src="/js/user/login.js"></script>
   </body>
 </html>
+

@@ -13,6 +13,10 @@ var data=[]
 var index1=0;
 
 
+$.toastDefaults.position = 'bottom-right';
+$.toastDefaults.dismissible = true;
+$.toastDefaults.stackable = true;
+$.toastDefaults.pauseDelayOnHover = true;
 
 
 window.onload = function () 
@@ -112,6 +116,14 @@ columns: [
                     success: function (response) {
                         console.log(JSON.parse(response))
                         $('#table').bootstrapTable('load', JSON.parse(response));
+
+                        $.toast({
+                            type: 'info',
+                            title: '注意！',
+                            subtitle: '',
+                            content: "已移出购物车",
+                            delay: 5000
+                        });
                     }
                 });
             },
@@ -167,6 +179,14 @@ $(".total").click(function (e) {
             console.log("yes")
             $(".total_num").html("0");
             $("#table").bootstrapTable('load', JSON.parse(response))
+            $.toast({
+                type: 'success',
+                title: '成功',
+                subtitle: '',
+                content: "结算已成功",
+                delay: 5000
+            });
+
         }
     });
     }

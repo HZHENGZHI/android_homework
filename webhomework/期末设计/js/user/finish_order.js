@@ -99,7 +99,7 @@ $('#table').bootstrapTable({
         {
             item.id=false;
             var btnfix = "<div class='row'><button type='button' class='btn back shadow-none' data-toggle='modal' data-target='#exampleModal'><img src='/img/bootstrap-icons-1.2.1/Cart4.svg' class='text-success' alt='' width='22' height='22'></button>"
-            +"<button type='button' class='btn shadow-none' data-toggle='modal' data-target='#mark_evaluation'><img src='/img/bootstrap-icons-1.2.1/Chat-dots.svg' class='text-success' alt='' width='22' height='22'></button></div>"
+            
             return btnfix
         },
     }
