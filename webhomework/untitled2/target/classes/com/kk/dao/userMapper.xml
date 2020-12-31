@@ -12,4 +12,8 @@
     <select id="getuseraddreess" parameterType="string" resultType="shopping_address">
         select * from shopping_address where userid=#{userid};
     </select>
+	<insert id="resiginuser" parameterType="user">
+		insert  into user (userid,userpw,truename,birthday,sex)
+		values(#{userid},#{userpw},#{truename},#{birthday},#{sex})
+	</insert>
 </mapper>

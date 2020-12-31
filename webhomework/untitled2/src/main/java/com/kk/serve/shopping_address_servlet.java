@@ -39,7 +39,7 @@ public class shopping_address_servlet extends HttpServlet {
         shopping_addressMapper mappre=sqlSession.getMapper(shopping_addressMapper.class);
         if(method.equals("add_address"))
         {
-            shopping_address add_address=new shopping_address(userid,shoppinger,address,phone,"0");
+            shopping_address add_address=new shopping_address(userid,shoppinger,address,phone,"1");
             System.out.println(phone + " "+shoppinger+" "+address);
             mappre.add_address(add_address);
 
