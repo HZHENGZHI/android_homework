@@ -6,6 +6,7 @@ import com.kk.pojo.shopping_car;
 import java.util.List;
 
 public interface book_searchMapper {
+    //获取所有图书
     public List<book> getallbook();
 
     public int inserbook(book book);

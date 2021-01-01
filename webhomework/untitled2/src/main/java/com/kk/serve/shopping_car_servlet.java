@@ -37,13 +37,11 @@ public class shopping_car_servlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         String token=request.getParameter("token");
         String method=request.getParameter("method");
-
         JWTVerifier jwtVerifier= JWT.require(Algorithm.HMAC256("kk")).build();
         DecodedJWT decodedJWT=jwtVerifier.verify(token);
         String userid=decodedJWT.getClaim("userid").asString();
         SqlSession sqlSession= mybatisutils.getsqlsession();
         shopping_carMapper mapper=sqlSession.getMapper(shopping_carMapper.class);
-
         if(method.equals("updatenums"))
         {
             String book_name=request.getParameter("book_name");
@@ -70,13 +68,11 @@ public class shopping_car_servlet extends HttpServlet {
         }
        else if(method.equals("set_account"))
         {
-
             String book_name=request.getParameter("book_name");
             String total_nums=request.getParameter("total_nums");
             String shoppinger=request.getParameter("shoppinger");
             String phone=request.getParameter("phone");
             String address=request.getParameter("address");
-
             Gson gson=new Gson();
             JsonParser jsonParser = new JsonParser();
             JsonArray jsonElements = jsonParser.parse(book_name).getAsJsonArray();
@@ -88,7 +84,6 @@ public class shopping_car_servlet extends HttpServlet {
                 buy_book_time time=new buy_book_time(userid,timeMils,car.getBook_name(),car.getBook_nums(),car.getBook_price());
                 mapper1.insertdata(time);
                 sqlSession1.close();
-
                 mapper.deluserdetail(car);
             }
             Date date=new Date();
@@ -116,8 +111,6 @@ public class shopping_car_servlet extends HttpServlet {
             String book_name=request.getParameter("book_name");
             shopping_car car=new shopping_car(userid,book_name,"","");
             mapper.deluserdetail(car);
-
-
             List<shopping_car> cars = mapper.getuserdetail(userid);
             PrintWriter out = response.getWriter();
             Gson gson1 = new Gson();

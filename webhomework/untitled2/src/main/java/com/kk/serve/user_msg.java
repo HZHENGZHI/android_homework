@@ -32,7 +32,6 @@ public class user_msg extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token=request.getParameter("token");
         String method=request.getParameter("method");
-        System.out.println(method);
         JWTVerifier jwtVerifier= JWT.require(Algorithm.HMAC256("kk")).build();
         DecodedJWT decodedJWT=jwtVerifier.verify(token);
         String userid=decodedJWT.getClaim("userid").asString();
@@ -46,17 +45,14 @@ public class user_msg extends HttpServlet {
             String data = gson.toJson(user);
             PrintWriter out = response.getWriter();
             out.println(data);
-            System.out.println(user);
         }
         else if(method.equals("getaddressmsg"))
         {
-            System.out.println("kkk");
             List<shopping_address> addresses=mapper.getuseraddreess(userid);
             Gson gson=new Gson();
             String data=gson.toJson(addresses);
             PrintWriter out= response.getWriter();
             out.println(data);
-            System.out.println(addresses);
         }
     }
 }

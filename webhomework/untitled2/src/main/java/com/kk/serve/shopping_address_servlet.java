@@ -42,26 +42,21 @@ public class shopping_address_servlet extends HttpServlet {
             shopping_address add_address=new shopping_address(userid,shoppinger,address,phone,"1");
             System.out.println(phone + " "+shoppinger+" "+address);
             mappre.add_address(add_address);
-
             SqlSession sqlSession1= mybatisutils.getsqlsession();
             userMapper mapper1=sqlSession1.getMapper(userMapper.class);
-
             List<shopping_address> addresses=mapper1.getuseraddreess(userid);
             Gson gson=new Gson();
             String data=gson.toJson(addresses);
             PrintWriter out= response.getWriter();
             out.println(data);
-
         }
         else if(method.equals("del_address"))
         {
             shopping_address del_address=new shopping_address(userid,shoppinger,address,phone,"0");
             System.out.println(phone + " "+shoppinger+" "+address);
             mappre.del_address(del_address);
-
             SqlSession sqlSession1= mybatisutils.getsqlsession();
             userMapper mapper1=sqlSession1.getMapper(userMapper.class);
-
             List<shopping_address> addresses=mapper1.getuseraddreess(userid);
             Gson gson=new Gson();
             String data=gson.toJson(addresses);
@@ -76,13 +71,11 @@ public class shopping_address_servlet extends HttpServlet {
         JWTVerifier jwtVerifier= JWT.require(Algorithm.HMAC256("kk")).build();
         DecodedJWT decodedJWT=jwtVerifier.verify(token);
         String userid=decodedJWT.getClaim("userid").asString();
-//        System.out.println(userid);
         SqlSession sqlSession=mybatisutils.getsqlsession();
         shopping_addressMapper mappre=sqlSession.getMapper(shopping_addressMapper.class);
         Map<String,String> map=new HashMap<>();
         map.put("userid",userid);
         shopping_address address=mappre.selectcurrentaddress(map);
-//        System.out.println(address);
         Gson gson=new Gson();
         String data=gson.toJson(address);
         PrintWriter out=response.getWriter();

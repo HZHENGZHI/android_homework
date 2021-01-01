@@ -24,6 +24,4 @@ public class mybatisutils {
     {
         return  sqlSessionFactory.openSession(true);
     }
-
-
 }

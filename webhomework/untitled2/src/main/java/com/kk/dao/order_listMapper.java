@@ -12,6 +12,6 @@ public interface order_listMapper {
     public List<order_list> selectuserorder(Map<String,String> map);
     //确认收货后更新用户的sigin
     public void updateusersigin(Map<String,String>map);
-
+    //删除用户的所有订单信息
     public void deluserorderlist(String userid);
 }

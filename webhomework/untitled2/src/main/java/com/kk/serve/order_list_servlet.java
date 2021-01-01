@@ -79,18 +79,14 @@ public class order_list_servlet extends HttpServlet {
         String userid=decodedJWT.getClaim("userid").asString();
         PrintWriter out= response.getWriter();
 
-        {
             SqlSession sqlSession= mybatisutils.getsqlsession();
             order_listMapper mapper=sqlSession.getMapper(order_listMapper.class);
             Map<String,String> map=new HashMap<>();
             map.put("userid",userid);
-            if(method.equals("notyet_finish")) {
-                map.put("sigin", "0");
-            }
+            if(method.equals("notyet_finish"))
+            {map.put("sigin", "0");}
             else if(method.equals("finish"))
-            {
-                map.put("sigin","1");
-            }
+            {map.put("sigin","1");}
             List<order_list> selectuserorder = mapper.selectuserorder(map);
             List<order_list_table> tableList=new ArrayList<>();
             for (order_list order_list : selectuserorder)
@@ -111,7 +107,5 @@ public class order_list_servlet extends HttpServlet {
             Gson gson=new Gson();
             String data=gson.toJson(tableList);
             out.println(data);
-
-        }
     }
 }

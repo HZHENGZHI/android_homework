@@ -106,7 +106,6 @@ columns: [{
                         type = TYPES[0],
                         title = TITLES[type],
                         content = CONTENT[type];
-
                     if (rng === 1) {
                         $.toast({
                             type: type,
@@ -130,9 +129,7 @@ columns: [{
         },
         width:300,
 }
-],
-
-})
+],})
 $(".add_car").click(function (e) { 
     var data=$("#table").bootstrapTable('getSelections')
     var k=JSON.stringify(data)
