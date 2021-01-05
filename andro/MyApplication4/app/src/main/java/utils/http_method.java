@@ -1,6 +1,5 @@
 package utils;
 
-import com.google.gson.Gson;
 import pojo.test;
 
 import java.io.InputStream;
@@ -34,8 +33,8 @@ public class http_method {
         }finally {
 
         }
-        Gson gson=new Gson();
-        String data=gson.toJson(test);
-        return data;
+        String data=test.toString();
+        System.out.println(test);
+        return test.toString();
     }
 }

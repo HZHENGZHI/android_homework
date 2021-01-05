@@ -12,7 +12,7 @@ public class database {
     public static void init() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver") ;
         String url="jdbc:mysql:"
-                + "//rm-bp140i440167f9e9rao.mysql.rds.aliyuncs.com:3306/stu_manger";
+                + "//rm-bp113sao09r93e60yvo.mysql.rds.aliyuncs.com:3306/stu_manger";
         String user="hzz_user";
         String password="DUIdui421";
         con = DriverManager.getConnection(url,user,password);
@@ -26,7 +26,6 @@ public class database {
     public static ResultSet select(String sql) throws SQLException, ClassNotFoundException {
         ResultSet re = getStat().executeQuery(sql);
         return re;
-
     }
 
     public static void  delete(String sql) throws SQLException, ClassNotFoundException {
