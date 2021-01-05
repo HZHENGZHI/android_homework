@@ -154,9 +154,10 @@ $(".total").click(function (e) {
     var total_nums=0
     for(var i=0;i<getcol_data.length;i++)
     {
-        total_nums += parseInt(getcol_data[i].book_price*getcol_data[i].book_nums)
+        total_nums += parseFloat(getcol_data[i].book_price*getcol_data[i].book_nums)
         
     }
+    total_nums = total_nums.toFixed(2);
     $(".total_num").html(total_nums);
     // console.log(car_data)
     if(getcol_data.length!=0)
@@ -211,10 +212,12 @@ var amoutn=0;
 // onCheckSome
 $('#table').on('check.bs.table', function (row, $element) {
     amoutn += $element.book_price * $element.book_nums
+    amoutn = amoutn.toFixed(2);
     $(".total_num").html(amoutn);
 })
 $('#table').on('uncheck.bs.table', function (row, $element) {
     amoutn -= $element.book_price * $element.book_nums
+    amoutn=amoutn.toFixed(2);
     $(".total_num").html(amoutn);
 })
 
@@ -224,6 +227,7 @@ $('#table').on('check-all.bs.table', function (rowsAfter, rowsBefore) {
     {
         amoutn+=rowsBefore[i].book_price*rowsBefore[i].book_nums
     }
+    amoutn=amoutn.toFixed(2);
     $(".total_num").html(amoutn);
 })
 

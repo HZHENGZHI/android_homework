@@ -21,6 +21,12 @@ $.ajax({
 
 
 $("#login").click(function (e) {
+  if ($("#id").val() == "" || $("#pw").val()=="")
+  {
+    alert("账号密码不为空");
+  }
+  else
+  {
   $.ajax({
     type: "post",
     url: "http://localhost:7070/untitled2_war/login",
@@ -40,4 +46,5 @@ $("#login").click(function (e) {
       console.log(response)
     }
   });
+}
 });

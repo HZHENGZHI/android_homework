@@ -82,7 +82,7 @@ $('#table').bootstrapTable({
            {
                var k = row.allbookname
                var k1=k.split("-");
-                console.log(k1);
+                
                 var index=0;
                 var detail1=[]
                 for(var i=0;i<k1.length;i++)

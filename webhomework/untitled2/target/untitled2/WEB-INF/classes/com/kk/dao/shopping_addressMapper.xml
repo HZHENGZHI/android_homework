@@ -4,7 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kk.dao.shopping_addressMapper">
     <select id="selectcurrentaddress" parameterType="Map" resultType="shopping_address">
+<<<<<<< HEAD
         select * from shopping_address where userid=#{userid} and sigin="1" ORDER BY RAND() LIMIT 1
+=======
+        select * from shopping_address where userid=#{userid} and sigin="1" ORDER BY RAND() limit 1
+>>>>>>> ba27e82d83137373940766d3e05cf44b936844f4
     </select>
     <insert id="add_address" parameterType="shopping_address">
         insert into
