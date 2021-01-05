@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.google.gson.Gson;
+
 import pojo.test;
 import utils.http_method;
 
@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Runnable sendable=new Runnable() {
         @Override
         public void run() {
-            String data= http_method.doget("http://192.168.137.1:7070/test");
-            System.out.println(data);
+            String data= http_method.doget("http://192.168.19.1:7070/untitled_war_exploded/test");
         }
     };
     @Override

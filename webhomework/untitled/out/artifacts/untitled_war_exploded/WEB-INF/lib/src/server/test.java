@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.sql.*;
+import java.sql.SQLException;
 
 @WebServlet("/test")
 public class test extends HttpServlet {
@@ -38,11 +38,12 @@ public class test extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String sql="select * from stu_question_grand";
+        String sql="select * from test";
         PrintWriter out=response.getWriter();
         try {
             ResultSet resultSet = dbget.select(sql);
             JSONArray jsonArray=dbget.formatRsToJsonArray(resultSet);
+            System.out.println(jsonArray);
             Gson gson=new Gson();
             String data=gson.toJson(jsonArray);
             out.print(data);

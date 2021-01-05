@@ -10,7 +10,9 @@
         delete from book_collection where userid=#{userid} and book_name=#{book_name}
     </delete>
     <insert id="insertusercollection" parameterType="book_collection">
-        insert into book_collection(userid,book_name,category,book_price) values(#{userid},#{book_name},#{category},#{book_price})
+        insert into book_collection(userid,book_name,category,book_price)
+        values
+        (#{userid},#{book_name},#{category},#{book_price})
     </insert>
     <select id="checksamedata" parameterType="Map" resultType="book_collection">
         select * from book_collection where userid=#{userid} and book_name=#{book_name}
