@@ -1,3 +1,7 @@
+$.toastDefaults.position = 'bottom-right';
+$.toastDefaults.dismissible = true;
+$.toastDefaults.stackable = true;
+$.toastDefaults.pauseDelayOnHover = true;
 $('#table').bootstrapTable({
     search:true,
     pagination:true,
@@ -34,7 +38,6 @@ columns: [{
     {
        'click .del':function(e,value,row,index)
        {
-           alert("正在执行删除操作，且不可撤回")
            $.ajax({
                type: "post",
                url: "http://localhost:7070/untitled2_war/admin_user",
@@ -44,6 +47,13 @@ columns: [{
                dataType: "text",
                success: function (response) {
                 $('#table').bootstrapTable('load', JSON.parse(response));
+                 $.toast({
+                     type: 'warning',
+                     title: '警告',
+                     subtitle: '',
+                     content: "已删除用户的所有信息",
+                     delay: 5000
+                 });
                }
            });
 
@@ -58,8 +68,5 @@ columns: [{
         },
         width:300,
 }
-],
-data:[
-    {}
 ]
 })

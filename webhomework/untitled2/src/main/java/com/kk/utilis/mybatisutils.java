@@ -24,4 +24,8 @@ public class mybatisutils {
     {
         return  sqlSessionFactory.openSession(true);
     }
+
+    public static void main(String[] args) {
+        SqlSession sqlSession=getsqlsession();
+    }
 }

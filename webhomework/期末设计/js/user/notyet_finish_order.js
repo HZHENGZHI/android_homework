@@ -1,4 +1,8 @@
 
+$.toastDefaults.position = 'bottom-right';
+$.toastDefaults.dismissible = true;
+$.toastDefaults.stackable = true;
+$.toastDefaults.pauseDelayOnHover = true;
 
 function detail_k(name,nums)
 {
@@ -96,7 +100,7 @@ $('#table').bootstrapTable({
            },
            'click .confirm': function (e, value, row, index) 
            {
-               alert("提示：正在进行确认收货")
+               
                $.ajax({
                    type: "post",
                    url: "http://localhost:7070/untitled2_war/order_list",
@@ -108,6 +112,13 @@ $('#table').bootstrapTable({
                    dataType: "text",
                    success: function (response) {
                        $('#table').bootstrapTable('load', JSON.parse(response));
+                        $.toast({
+                            type: 'success',
+                            title: '成功',
+                            subtitle: '',
+                            content: "已完成商品收货",
+                            delay: 5000
+                        });
                    }
                });
            }

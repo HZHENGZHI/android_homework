@@ -1,17 +1,3 @@
-// function book(picture, name, IBSN, price)
-// {
-//     this.picture = picture;
-//     this.name=name;
-//     this.IBSN=IBSN;
-//     this.price=price;
-// }
-
-
-// var data=[];
-// data[0] = new book("https://source.acexy.cn/view/XaFp5ry","哈姆雷特", "9787552701074", "65")
-// var temp=0
-
-
 const TYPES = ['info', 'warning', 'success', 'error'],
 TITLES = {
     'info': '注意！',
@@ -50,7 +36,6 @@ $('#table').bootstrapTable({
                 });
                 $('#table').bootstrapTable('load', JSON.parse(msg));
                 data = JSON.parse(msg)
-                // console.log(data)
             },
         });
     },
@@ -107,13 +92,7 @@ $('#table').bootstrapTable({
         'click .del':function(e,value,row,index)
         {
             {
-                $.toast({
-                    type: TYPES[0],
-                    title: TITLES[TYPES[0]],
-                    subtitle: '',
-                    content: "提示:已移出收藏夹",
-                    delay: 5000
-                });
+                
             }
             $.ajax({
                 type: "post",
@@ -125,6 +104,13 @@ $('#table').bootstrapTable({
                 },
                 dataType: "text",
                 success: function (response) {
+                    $.toast({
+                    type: TYPES[0],
+                    title: TITLES[TYPES[0]],
+                    subtitle: '',
+                    content: "提示:已移出收藏夹",
+                    delay: 5000
+                });
                     $('#table').bootstrapTable('load', JSON.parse(response));
                 }
             });
@@ -138,11 +124,5 @@ $('#table').bootstrapTable({
                 return btnfix
             },
     }
-    ],
-    data:[
-        {
-
-        }
     ]
-    
 })

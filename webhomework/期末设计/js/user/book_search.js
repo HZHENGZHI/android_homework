@@ -139,7 +139,13 @@ $(".total-car").click(function (e) {
     var data1=$("#table").bootstrapTable('getSelections')
     if(data1.length==0)
     {
-        alert("提示:加入购物车的数目为0")
+        $.toast({
+            type: 'warning',
+            title: '警告',
+            subtitle: '',
+            content: "未选择任何一个商品",
+            delay: 5000
+        });
     }
     else if(data1.length!=0)
     {

@@ -1,3 +1,9 @@
+
+$.toastDefaults.position = 'bottom-right';
+$.toastDefaults.dismissible = true;
+$.toastDefaults.stackable = true;
+$.toastDefaults.pauseDelayOnHover = true;
+
 $('#table').bootstrapTable({
   toolbar: '#toolbar',
   search:true,
@@ -26,17 +32,13 @@ $('#table').bootstrapTable({
       {
         'click .edit': function (e, value, row, index)
         {
-          console.log(row)
 
           $(".book_name").val(row.book_name);
            $(".book_price").val(row.book_price);
             $(".book_class").val(row.category);
-
-            console.log($(".book_price").val())
         },
         'click .del':function (e, value,row,index)
         {
-          alert("提示：正在执行删除操作");
           $.ajax({
             type: "post",
             url: "http://localhost:7070/untitled2_war/admin_manger_servlet",
@@ -49,6 +51,13 @@ $('#table').bootstrapTable({
             dataType: "text",
             success: function (response) {
                $('#table').bootstrapTable('load', JSON.parse(response));
+                $.toast({
+                  type: 'warning',
+                  title: '警告',
+                  subtitle: '',
+                  content: "已完成删除",
+                  delay: 5000
+                });
             }
           });
           //删除数据
@@ -80,21 +89,44 @@ function isChn(str) {
 $(".book_add_confirm").click(function (e) {
  
   if( isChn($(".book_class1").val()))
- { $.ajax({
-    type: "post",
-    url: "http://localhost:7070/untitled2_war/admin_manger_servlet",
-    data: {
-      book_name: $(".book_name1").val(),
-      category: $(".book_class1").val(),
-      book_price: $(".book_price1").val(),
-      method: "add_book"
-    },
-    dataType: "text",
-    success: function (response) {
-      $('#table').bootstrapTable('load', JSON.parse(response));
-    }
+ { 
+    $.ajax({
+      type: "post",
+      url: "http://localhost:7070/untitled2_war/admin_manger_servlet",
+      data: {
+        book_name: $(".book_name1").val(),
+        category: $(".book_class1").val(),
+        book_price: $(".book_price1").val(),
+        method: "add_book"
+      },
+      dataType: "text",
+      success: function (response) {
+        $('#table').bootstrapTable('load', JSON.parse(response));
+         $.toast({
+           type: 'success',
+           title: '成功',
+           subtitle: '',
+           content: "已完成图书添加操作",
+           delay: 5000
+         });
+      }
+    });
+}
+else
+{
+  $.toast({
+    type: 'error',
+    title: '警告',
+    subtitle: '',
+    content: "类别存在非中文",
+    delay: 5000
   });
 }
+
+  $(".book_name1").val("")
+  $(".book_class1").val("")
+  $(".book_price1").val("")
+
 });
 $(".confirm").click(function (e) { 
   e.preventDefault();
@@ -110,6 +142,13 @@ $(".confirm").click(function (e) {
      dataType: "text",
      success: function (response) {
         $('#table').bootstrapTable('load', JSON.parse(response));
+         $.toast({
+           type: 'success',
+           title: '成功',
+           subtitle: '',
+           content: "已完成图书修改",
+           delay: 5000
+         });
      }
    });
   

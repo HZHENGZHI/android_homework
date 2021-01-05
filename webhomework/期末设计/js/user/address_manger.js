@@ -1,3 +1,7 @@
+$.toastDefaults.position = 'bottom-right';
+$.toastDefaults.dismissible = true;
+$.toastDefaults.stackable = true;
+$.toastDefaults.pauseDelayOnHover = true;
 $('#table').bootstrapTable({
   toolbar: '#toolbar',
   // cardView:true,
@@ -61,8 +65,14 @@ $('#table').bootstrapTable({
              },
              dataType: "text",
              success: function (response) {
-                alert("提示:正在执行删除地址")
                 $('#table').bootstrapTable('load', JSON.parse(response));
+                 $.toast({
+                   type: 'success',
+                   title: '成功',
+                   subtitle: '',
+                   content: "已完成地址删除",
+                   delay: 5000
+                 });
               
              }
            });
@@ -91,11 +101,23 @@ $(".add_address").click(function (e)
   e.preventDefault();
   if ($(".add_phone").val() == "" || $(".add_address1").val()=="" || $(".add_shoppinger").val()=="")
   {
-      alert("提示:收货地址/收货人/手机号不为空")
+       $.toast({
+         type: 'error',
+         title: '警告',
+         subtitle: '',
+         content: "手机号或地址或收货人不为空",
+         delay: 5000
+       });
   }
   else if (phoneFun($(".add_phone").val())==false)
   {
-      alert("提示:手机号码格式不正确")
+       $.toast({
+         type: 'error',
+         title: '警告',
+         subtitle: '',
+         content: "手机号格式不正确",
+         delay: 5000
+       });
   }
   else if ($(".add_address1").val() && $(".add_shoppinger").val() && phoneFun($(".add_phone").val()))
   {
@@ -113,7 +135,13 @@ $(".add_address").click(function (e)
       dataType: "text",
       success: function (response) {
         $('#table').bootstrapTable('load', JSON.parse(response));
-        alert("提示:正在添加地址数据")
+         $.toast({
+           type: 'success',
+           title: '成功',
+           subtitle: '',
+           content: "已完成地址添加",
+           delay: 5000
+         });
       }
     });
   }
