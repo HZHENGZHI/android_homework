@@ -77,50 +77,47 @@ $('#table').bootstrapTable({
   ],
 })
 
-$(".address_confirm").click(function (e) { 
-  // e.preventDefault();
-  //  console.log("edit address")
-  //  $.ajax({
-  //    type: "post",
-  //    url: "http://localhost:7070/untitled2_war/shopping_address",
-  //    data: 
-  //    {
-  //      token:$.cookie('name'),
-  //      phone:$(".phone").val(),
-  //      address:$(".address").val(),
-  //      shoppinger:$(".shoppinger").val(),
-  //      method:"edit_address"
-  //    },
-  //    dataType: "text",
-  //    success: function (response) {
-       
-  //    }
-  //  });
-});
+function phoneFun(phones) {
+  var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+  if (!myreg.test(phones)) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 $(".add_address").click(function (e) 
 { 
   e.preventDefault();
- console.log("add address")
-
- $.ajax({
-  type: "post",
-  url: "http://localhost:7070/untitled2_war/shopping_address",
-  data: 
+  if ($(".add_phone").val() == "" || $(".add_address1").val()=="" || $(".add_shoppinger").val()=="")
   {
-    token:$.cookie('name'),
-    phone:$(".add_phone").val(),
-    address:$(".add_address1").val(),
-    shoppinger:$(".add_shoppinger").val(),
-    method:"add_address"
-  },
-  dataType: "text",
-  success: function (response) {
-    $('#table').bootstrapTable('load', JSON.parse(response));
-    $(".add_phone").val("")
-    $(".add_address1").val("")
-    $(".add_shoppinger").val("")
-    alert("提示:正在添加地址数据")
+      alert("提示:收货地址/收货人/手机号不为空")
   }
-});
+  else if (phoneFun($(".add_phone").val())==false)
+  {
+      alert("提示:手机号码格式不正确")
+  }
+  else if ($(".add_address1").val() && $(".add_shoppinger").val() && phoneFun($(".add_phone").val()))
+  {
+    $.ajax({
+      type: "post",
+      url: "http://localhost:7070/untitled2_war/shopping_address",
+      data: 
+      {
+        token:$.cookie('name'),
+        phone:$(".add_phone").val(),
+        address:$(".add_address1").val(),
+        shoppinger:$(".add_shoppinger").val(),
+        method:"add_address"
+      },
+      dataType: "text",
+      success: function (response) {
+        $('#table').bootstrapTable('load', JSON.parse(response));
+        alert("提示:正在添加地址数据")
+      }
+    });
+  }
+   $(".add_phone").val("")
+   $(".add_address1").val("")
+   $(".add_shoppinger").val("")
 });

@@ -63,16 +63,24 @@ $('#table').bootstrapTable({
       width:300
     }
   ],
-  data: [
-  {
+
+})
+function isChn(str) {
+
+  var reg = /^[\u4E00-\u9FA5]+$/;
+
+  if (!reg.test(str)) {
+
+    return false;
 
   }
-  ]
-})
+  return true;
 
+}
 $(".book_add_confirm").click(function (e) {
-  console.log($(".book_name1").val())
-  $.ajax({
+ 
+  if( isChn($(".book_class1").val()))
+ { $.ajax({
     type: "post",
     url: "http://localhost:7070/untitled2_war/admin_manger_servlet",
     data: {
@@ -86,6 +94,7 @@ $(".book_add_confirm").click(function (e) {
       $('#table').bootstrapTable('load', JSON.parse(response));
     }
   });
+}
 });
 $(".confirm").click(function (e) { 
   e.preventDefault();
